@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'reco';
+  src: url('./assets/Recoleta-RegularDEMO.otf');
+}
+
+:root {
+  --text: #F3F7EC;
+  --overlay: rgb(60, 91, 111, 0.75);
+  --bg: #153448;
+  --bg2: #3C5B6F;
+}
+
+body {
+  font-family: 'reco';
+  line-height: 2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 4.8em;
+}
+
+h2 {
+  font-size: 2.4em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+
+  h1 {
+    font-size: 3.2em;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+  }
+  
+  p {
+    font-size: 0.8em;
+  } 
+
+  button {
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+  }
+}
