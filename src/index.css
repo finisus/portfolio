@@ -1,6 +1,11 @@
 @font-face {
   font-family: 'reco';
-  src: url('./assets/Recoleta-RegularDEMO.otf');
+  src: url('./assets/typeface/Recoleta-RegularDEMO.otf');
+}
+
+@font-face {
+  font-family: 'playtoy';
+  src: url('./assets/typeface/playtoy.woff2');
 }
 
 :root {
@@ -54,13 +59,13 @@ button {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  z-index: 10000;
+  z-index: 1000;
   overflow: hidden;
   pointer-events: none;
   background: transparent url('./assets/staticNoise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: staticNoise-animation 0.2s infinite;
-  opacity: 0.4;
+  opacity: 0.9;
   visibility: visible;
 }
 
@@ -95,16 +100,42 @@ button {
 
 .navbar .icon {
   height: 80px;
+  width: 80px;
 }
 .navbar .icon img {
   width: 100%;
   height: 100%;
 }
 
+.navbar span {
+  color: var(--text);
+  font-size: 2em;
+  font-family: 'playtoy';
+}
+
 /****/
 
 /**
-* component@ Navbar
+* component@ Header 
+*/
+
+.header {
+  margin: 2em 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .titleImg {
+  width: 100%;
+  max-width: 600px;
+}
+
+/****/
+
+/**
+* component@ Footer
 */
 
 .footer {
@@ -133,6 +164,11 @@ button {
 
 .footer .info span {
   color: var(--text);
+}
+
+.footer .smallEmoji {
+  width: 16px;
+  height: 16px;
 }
 
 .footer .info button {

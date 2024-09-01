@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TempLanding from "./TempLanding.tsx";
 import StaticNoise from "./StaticNoise.tsx";
 import Navbar from "./Navbar.tsx";
+import Header from "./Header.tsx";
 
 import Footer from "./Footer.tsx";
 
@@ -11,8 +12,6 @@ function App(): JSX.Element {
   useEffect(() => {
     setIsLaunched(false);
   }, []);
-
-  
 
   if (!isLaunched) {
     return (
@@ -26,6 +25,7 @@ function App(): JSX.Element {
     <>
       <StaticNoise />
       <Navbar />    
+      <Header />
 
       <Footer />
     </>

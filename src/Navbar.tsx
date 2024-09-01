@@ -6,6 +6,7 @@ function Navbar(): JSX.Element {
       <div className="icon">
         <img src={navIcon} alt="Finisus" />
       </div>
+      <span>FINIS VISUS</span>
       <div className="links">
         <button>Github</button>
       </div>
