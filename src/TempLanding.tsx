@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
-import './TempLanding.css';
 import noiseSVG from './assets/nnnoise.svg';
 
-function TempLanding(): JSX.Element {
-
+function TempLanding() {
   useEffect(() => {
     const githubBtn = document.getElementById('githubBtn') as HTMLButtonElement | null;
     const openGithub = () => window.open("https://github.com/finisus", "_blank");
@@ -29,7 +27,7 @@ function TempLanding(): JSX.Element {
   }, []);
 
   return (
-    <div id='container'>
+    <div id='tempLanding'>
 
       <img id='bgNoiseSvg' src={noiseSVG} />
 

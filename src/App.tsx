@@ -1,9 +1,33 @@
+import { useState, useEffect } from "react";
 import TempLanding from "./TempLanding.tsx";
+import StaticNoise from "./StaticNoise.tsx";
+import Navbar from "./Navbar.tsx";
+
+import Footer from "./Footer.tsx";
 
 function App(): JSX.Element {
+  const [isLaunched, setIsLaunched] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsLaunched(true);
+  }, []);
+
+  
+
+  if (!isLaunched) {
+    return (
+      <>
+        <TempLanding /> 
+      </>
+    );
+  }
+
   return (
     <>
-      <TempLanding />
+      <StaticNoise />
+      <Navbar />    
+
+      <Footer />
     </>
   );
 }

@@ -4,38 +4,177 @@
 }
 
 :root {
-  --text: #F3F7EC;
-  --overlay: rgb(60, 91, 111, 0.75);
-  --bg: #153448;
-  --bg2: #3C5B6F;
+  --text_temp: #F3F7EC;
+  --overlay_temp: rgb(60, 91, 111, 0.75);
+  --bg_temp: #153448;
+  --bg2_temp: #3C5B6F;
+
+  --bg: #121212;
+  --text: #efe9d3;
+
+  --text2: #fff7ec;
+  --yellow: #f1ae3b;
+  --orange: #f36b17;
+  --pink: #e515a9;
+  --blue: #3b50ed;
+  --cyan: #0eb2b1;
 }
 
 body {
-  font-family: 'reco';
-  line-height: 2;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: var(--bg);
+  overflow-x: hidden;
+  overflow-y: auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text);
-  background-color: var(--bg);
-  margin: 0;
-  overflow: hidden;
-}
-
-h1 {
-  font-size: 4.8em;
-}
-
-h2 {
-  font-size: 2.4em;
-}
-
-p {
-  font-size: 1.2em;
 }
 
 button {
+  cursor: pointer;
+}
+
+/**
+* component@ StaticNoise
+*/
+
+.staticNoise {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  z-index: 10000;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: staticNoise-animation 0.2s infinite;
+  opacity: 0.3;
+  visibility: visible;
+}
+
+@keyframes staticNoise-animation {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+
+/****/
+
+/**
+* component@ Navbar
+*/
+
+.navbar {
+  border: 0.1px solid var(--text);
+  margin: 2em 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .icon {
+  height: 80px;
+}
+.navbar .icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/****/
+
+/**
+* component@ Navbar
+*/
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  width: calc(100vw - 2em);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid white;
+}
+
+.footer .info {
+  width: calc(100% - 4em);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.footer .info span {
+  color: var(--text);
+}
+
+.footer .info button {
+  background: none;
+  border: none;
+  color: var(--text);
+
+}
+
+/****/
+
+/**
+* component@ TempLanding
+*/
+
+#tempLanding {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'reco';
+  line-height: 2;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bg_temp);
+  color: var(--text_temp);
+}
+
+#tempLanding h1 {
+  font-size: 4.8em;
+}
+
+#tempLanding h2 {
+  font-size: 2.4em;
+}
+
+#tempLanding p {
+  font-size: 1.2em;
+}
+
+#tempLanding button {
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -44,22 +183,151 @@ button {
   cursor: pointer;
 }
 
+#tempLanding header {
+  padding: 1.2em 2.4em;
+  width: calc(100% - 4.8em);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tempLanding header span {
+  font-size: 2.4em;
+}
+
+#tempLanding header .socials {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2em;
+}
+
+#tempLanding header .socials button {
+  z-index: 999;
+  border: 1px solid var(--overlay_temp);
+  color: var(--text_temp);
+  background-color: rgba(255, 255, 255, 0.0);
+  transition: border-color 1s, background-color 1.0s, color 0.5s;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#tempLanding header .socials button:hover {
+  background-color: var(--text_temp);
+  color: var(--bg_temp);
+}
+
+#tempLanding main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.2em 2.4em;
+  width: calc(100% - 4.8em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tempLanding main h1 {
+  margin: 0;
+  line-height: 1;
+}
+
+#tempLanding main h2 {
+  margin-top: 0;
+}
+
+#tempLanding main p {
+  margin-top: 2em;
+  text-align: center;
+}
+
+#tempLanding #bgNoiseSvg {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  opacity: 1.0;
+  pointer-events: none;
+}
+
+#tempLanding #starSvg {
+  z-index: -999;
+  position: fixed;
+  top: -25vh;
+  right: -50vh;
+  height: 150vh;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  filter: blur(80x);
+  -webkit-filter: blur(80px);
+}
+
+/****/
+
 @media screen and (max-width: 600px) {
 
-  h1 {
+  /**
+  * component@ TempLanding_mobile
+  */
+
+  #tempLanding h1 {
     font-size: 3.2em;
   }
   
-  h2 {
+  #tempLanding h2 {
     font-size: 1.6em;
   }
   
-  p {
+  #tempLanding p {
     font-size: 0.8em;
   } 
 
-  button {
+  #tempLanding button {
     padding: 0.3em 0.6em;
     font-size: 0.8em;
   }
+
+  #tempLanding header {
+    padding: 0.8em 1.6em;
+    width: calc(100% - 3.2em);
+  }
+
+  #tempLanding header span {
+    font-size: 1.6em;
+  }
+
+  #tempLanding header .socials {
+    gap: 0.8em;
+  }
+
+  #tempLanding main {
+    padding: 0.8em 1.6em;
+    width: calc(100% - 3.2em);
+  }
+
+  #tempLanding main p {
+    margin-top: 1.6em;
+  }
+
+  #tempLanding #bgNoiseSvg {
+    opacity: 0.6;
+  }
+  
+  #tempLanding #starSvg {
+    top: -25vh;
+    right: -50vh;
+    height: 150vh;
+  }
+
+  /****/
+
 }
