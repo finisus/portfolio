@@ -9,7 +9,7 @@ function App(): JSX.Element {
   const [isLaunched, setIsLaunched] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsLaunched(true);
+    setIsLaunched(false);
   }, []);
 
   
