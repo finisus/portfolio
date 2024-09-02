@@ -428,7 +428,98 @@ h3 {
 
 /****/
 
-@media screen and (max-width: 600px) {
+@media (hover: none) {
+  .island button:hover {
+    background-color: rgb(18, 18, 18);
+  }
+
+  .island .tooltip {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+
+  .hp .socials button:hover {
+    background-color: rgb(18, 18, 18);
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+  /**
+  * component@ Navbar_mobile
+  */
+
+  .navbar {
+    margin: 2em 1em;
+    width: calc(100% - 2em);
+  }
+
+  .island {
+    gap: 8px;
+    padding: 8px 8px;
+    border-radius: 16px;
+  }
+
+  .island button {
+    padding: 8px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 8px;
+  }
+
+  .island .tooltip {
+    position: fixed;
+    margin-top: -104px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8em;
+    font-weight: 900;
+  }
+
+  /****/
+
+  /**
+  * component@ HomePage 
+  */
+
+  .hp .header .titleImg {
+    position: absolute;
+    top: 0;
+    margin: 3em 2em;
+    width: calc(100% - 4em);
+  }
+
+  .hp .header .bunnyImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hp .info {
+    margin: 1em 1em;
+    padding: 1em;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
+                      0 8px 16px 8px rgba(0, 0, 0,0.55),
+                      0 0 0 1px rgba(0, 0, 0, 0.0);
+  }
+
+  .hp .info .contact {
+    text-align: center;
+  }
+
+  .hp .info .contact h3 {
+    color: var(--yellow);
+  }
+
+  .hp .socials {
+    gap: 16px;
+  }
+
+  /****/
 
   /**
   * component@ TempLanding_mobile
