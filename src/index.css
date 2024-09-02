@@ -14,8 +14,10 @@
   --bg_temp: #153448;
   --bg2_temp: #3C5B6F;
 
-  --bg: #121212;
+  --bg: rgb(18, 18, 18);
   --text: #efe9d3;
+  --accent1: rgb(210, 193, 59);
+  --accent2: #c73230;
 
   --text2: #fff7ec;
   --yellow: #f1ae3b;
@@ -35,16 +37,34 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   background-color: var(--bg);
-  overflow-x: hidden;
-  overflow-y: auto;
+  color: var(--text);
+  font-family: 'reco'; 
+  line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 button {
   cursor: pointer;
+}
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.2em;
 }
 
 /**
@@ -59,7 +79,7 @@ button {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  z-index: 1000;
+  z-index: 90;
   overflow: hidden;
   pointer-events: none;
   background: transparent url('./assets/staticNoise-transparent.png') repeat 0 0;
@@ -90,92 +110,107 @@ button {
 */
 
 .navbar {
-  border: 0.1px solid var(--text);
-  margin: 2em 4em;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  margin: 2em 2em;
+  width: calc(100% - 4em);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.navbar .icon {
-  height: 80px;
-  width: 80px;
-}
-.navbar .icon img {
-  width: 100%;
-  height: 100%;
+.island {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.navbar span {
+.island button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'reco';
+  font-size: 16px;
+  padding: 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: var(--bg);
+  transition: background-color 0.3s;
+}
+.island button svg {
   color: var(--text);
-  font-size: 2em;
-  font-family: 'playtoy';
+}
+.island button:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+.island .tooltip {
+  position: fixed;
+  margin-top: -112px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-weight: 900;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.island .activePage svg {
+  color: var(--accent1);
+}
+.island .activePage .tooltip {
+  color: var(--accent1);
+  border: 1px solid rgba(210, 193, 59, 0.2);
 }
 
 /****/
 
 /**
-* component@ Header 
+* component@ HomePage 
 */
 
-.header {
-  margin: 2em 4em;
+.hp .header {
+  margin: 4em 4em;
+  height: calc(100vh - 8em);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.header .titleImg {
+.hp .header .titleImg {
   width: 100%;
   max-width: 600px;
 }
 
-/****/
-
-/**
-* component@ Footer
-*/
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.hp .info {
+  margin: 1em 1em;
   padding: 1em;
-  width: calc(100vw - 2em);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border-top: 1px solid white;
+  background-color: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
 }
 
-.footer .info {
-  width: calc(100% - 4em);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1em;
+.hp .info .contact {
+
 }
 
-.footer .info span {
-  color: var(--text);
-}
 
-.footer .smallEmoji {
-  width: 16px;
-  height: 16px;
-}
-
-.footer .info button {
-  background: none;
-  border: none;
-  color: var(--text);
-
+.hp .info .navbar-spacer {
+  padding: 2em 1em;
 }
 
 /****/
