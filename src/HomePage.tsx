@@ -38,7 +38,7 @@ function HomePage(): JSX.Element {
     } 
 
     const telegramBtn = document.getElementById('telegramBtn') as HTMLButtonElement | null;
-    const openTelegram = () => window.open("", "_blank");
+    const openTelegram = () => window.open("https://t.me/finisus", "_blank");
     if (telegramBtn) {
       telegramBtn.addEventListener('click', openTelegram);
     }

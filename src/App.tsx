@@ -6,9 +6,11 @@ import HomePage from "./HomePage.tsx";
 import AboutPage from "./AboutPage.tsx";
 import WorksPage from "./WorksPage.tsx";
 
+export type ActivePage = "HomePage" | "AboutPage" | "WorksPage";
+
 function App(): JSX.Element {
   const [isLaunched, setIsLaunched] = useState<boolean>(false);
-  const [activePage, setActivePage] = useState<string>("HomePage");
+  const [activePage, setActivePage] = useState<ActivePage>("HomePage");
 
   useEffect(() => {
     setIsLaunched(true);
