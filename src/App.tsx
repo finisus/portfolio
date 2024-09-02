@@ -11,7 +11,7 @@ function App(): JSX.Element {
   const [activePage, setActivePage] = useState<string>("HomePage");
 
   useEffect(() => {
-    setIsLaunched(false);
+    setIsLaunched(true);
     setActivePage("HomePage");
   }, []);
 

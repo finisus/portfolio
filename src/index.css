@@ -199,8 +199,8 @@ h3 {
 */
 
 .hp .header {
-  margin: 4em 4em;
-  height: calc(100vh - 8em);
+  margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,8 +208,23 @@ h3 {
 }
 
 .hp .header .titleImg {
+  position: absolute;
+  top: 0;
+  margin: 4em 4em;
   width: 100%;
   max-width: 600px;
+}
+
+.hp .header .bunnyImg {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1.0;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: filter 0.75s, -webkit-filter 0.75s;
 }
 
 .hp .info {

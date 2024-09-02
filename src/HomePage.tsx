@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import titleHeaderImg from './assets/header-playtoy[1080x215][halftone].png';
+import bunnyPlayboyImg from './assets/bunny-playboy[1080x1177][transparentbg][gradient].png'
 import yellowHeartEmoji from './assets/yellow-heart-emoji.png';
 
 const envelopeClosedIconSVG = <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2C0.447715 2 0 2.44772 0 3V12C0 12.5523 0.447715 13 1 13H14C14.5523 13 15 12.5523 15 12V3C15 2.44772 14.5523 2 14 2H1ZM1 3L14 3V3.92494C13.9174 3.92486 13.8338 3.94751 13.7589 3.99505L7.5 7.96703L1.24112 3.99505C1.16621 3.94751 1.0826 3.92486 1 3.92494V3ZM1 4.90797V12H14V4.90797L7.74112 8.87995C7.59394 8.97335 7.40606 8.97335 7.25888 8.87995L1 4.90797Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>;
@@ -10,6 +11,20 @@ const githubIconSVG = <svg width="20" height="20" viewBox="0 0 15 15" fill="none
 function HomePage(): JSX.Element {
 
   useEffect(() => {
+    const handleBlurBunnyOnScroll = () => {
+      const maxBlur = 8; // Maximum blur in pixels
+      const scrollRange = document.body.scrollHeight - window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const blurAmount = (scrollPosition / scrollRange) * maxBlur;
+
+      const bunnyImg = document.querySelector('.hp .header .bunnyImg') as HTMLElement;
+      if (bunnyImg) {
+        bunnyImg.style.filter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
+        bunnyImg.style.webkitFilter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
+      }
+    }
+    window.addEventListener('scroll', handleBlurBunnyOnScroll);
+
     const mailBtn = document.getElementById('mailBtn') as HTMLButtonElement | null;
     const openMail = () => window.open("mailto:finisus@protonmail.com", "_self")
     if (mailBtn) {
@@ -35,6 +50,8 @@ function HomePage(): JSX.Element {
     }
 
     return () => {
+      window.removeEventListener('scroll', handleBlurBunnyOnScroll);
+
       if (mailBtn) {
         mailBtn.removeEventListener('click', openMail);
       }
@@ -58,6 +75,7 @@ function HomePage(): JSX.Element {
 
       <div className="header">
         <img className='titleImg' src={titleHeaderImg} />
+        <img className='bunnyImg' src={bunnyPlayboyImg} />
       </div>
 
       <div className='info'>
