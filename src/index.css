@@ -300,6 +300,140 @@ h3 {
 /****/
 
 /**
+* component@ AboutPage
+*/
+
+.ap {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 656px;
+  height: calc(100vh - 4em);
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ap .gridBackground {
+  z-index: -900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg);
+  opacity: 0.5;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ap .gridBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, transparent 50%, black);
+  pointer-events: none;
+}
+
+.ap .gridBackground .columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.ap .gridBackground .rows {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.ap span {
+  font-size: 1.2em;
+  color: var(--text2);
+}
+
+/****/
+
+/**
+* component@ WorksPage
+*/
+
+.wp {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  max-width: 656px;
+  height: calc(100vh - 4em);
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wp .gridBackground {
+  z-index: -900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg);
+  opacity: 0.25;
+  overflow: hidden;
+  pointer-events: none;
+}
+.wp .gridBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, transparent 25%, black);
+  pointer-events: none;
+}
+
+.wp .gridBackground .columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.wp .gridBackground .rows {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.wp span {
+  font-size: 1.2em;
+  color: var(--text2);
+}
+
+/****/
+
+/**
 * component@ TempLanding
 */
 
