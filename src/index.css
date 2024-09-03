@@ -325,7 +325,6 @@ h3 {
   }
 }
 
-
 /****/
 
 /**
@@ -419,6 +418,7 @@ h3 {
   border-right: 0.1px solid var(--bg);
   background-color: rgb(241, 189, 59);
   box-shadow: 0px -16px 64px 8px rgb(123, 97, 30);
+  animation: 1s ease-in-out growLight forwards
 }
 
 .ap .lamplight {
@@ -433,6 +433,16 @@ h3 {
   filter: blur(20px);
   -webkit-filter: blur(20px);
   box-shadow: 0px 80px 160px 48px rgb(241, 189, 59);
+  animation: 1s ease-in-out growLight forwards
+}
+
+@keyframes growLight {
+  0% {
+    width: 240px;
+  } 
+  100% {
+    width: 640px;
+  }
 }
 
 .ap .content .skills {
