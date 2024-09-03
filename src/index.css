@@ -257,10 +257,10 @@ h3 {
   transform: translate(-50%, -50%);
   opacity: 1.0;
   pointer-events: none;
-   
+  /* 
   filter: blur(64px);
   -webkit-filter: blur(64px);
-  
+  */ 
 }
 .blob-blur-bg svg {
   scale: 1.2;
