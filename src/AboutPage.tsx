@@ -1,6 +1,6 @@
 import Info from './Info.tsx';
 import gridDotsSVG from './assets/grid[circular-dots][18x18].svg';
-import skillsBannerImg from './assets/skills-banner-playtoy[compressed].png';
+import skillsBannerImg from './assets/skills-banner-reco.png';
 
 function AboutPage(): JSX.Element {
   return(

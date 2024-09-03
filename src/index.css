@@ -261,9 +261,19 @@ h3 {
   filter: blur(64px);
   -webkit-filter: blur(64px);
   */ 
+  animation: 3s ease-in-out noShowToShow forwards;
 }
 .blob-blur-bg svg {
   scale: 1.2;
+}
+
+@keyframes noShowToShow {
+  0% {
+    opacity: 0.0;
+  } 
+  100% {
+    opacity: 1.0;
+  }
 }
 
 .hp .header {
@@ -281,6 +291,16 @@ h3 {
   margin: 4em 4em;
   width: 100%;
   max-width: 600px;
+  animation: 1.5s ease-in-out slideInFromAbove forwards;
+}
+
+@keyframes slideInFromAbove {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .hp .header .bunnyImg {
@@ -293,6 +313,16 @@ h3 {
   filter: blur(0px);
   -webkit-filter: blur(0px);
   transition: filter 0.75s, -webkit-filter 0.75s;
+  animation: 1s ease-in-out slideInFromBottom forwards;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 
@@ -478,7 +508,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
+  text-align: center;
 }
 
 .wp .content span {
@@ -625,41 +656,6 @@ h3 {
 @media screen and (width > 1220px) and (width <= 1420px) { .blob-blur-bg svg { scale: 0.9; } }
 @media screen and (width > 1420px) and (width <= 1620px) { .blob-blur-bg svg { scale: 1.0; } }
 @media screen and (width > 1620px) and (width <= 1820px) { .blob-blur-bg svg { scale: 1.1; } }
-
-/*
-
-.ap .content .header h1 {
-  margin-top: 80px;
-}
-
-.ap .lamp {
-  opacity: 0.8;
-  position: absolute;
-  margin-top: -240px;
-  align-self: center;
-  width: 640px;
-  height: 3px;
-  border-top: 0.1px solid var(--bg);
-  border-left: 0.1px solid var(--bg);
-  border-right: 0.1px solid var(--bg);
-  background-color: rgb(241, 189, 59);
-  box-shadow: 0px -16px 64px 8px rgb(123, 97, 30);
-}
-
-.ap .lamplight {
-  opacity: 1.0;
-  position: absolute;
-  margin-top: -240px;
-  z-index: -1;
-  align-self: center;
-  width: 640px;
-  height: 3px;
-  background-color: rgb(241, 189, 59);
-  filter: blur(20px);
-  -webkit-filter: blur(20px);
-  box-shadow: 0px 80px 160px 48px rgb(241, 189, 59);
-}
-*/
 
 @media (hover: none) {
   .island button:hover {

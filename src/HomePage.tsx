@@ -35,6 +35,7 @@ const blobBlurBg: JSX.Element = <svg width="1220" height="1161" viewBox="0 0 122
 
 /*
 * Maybe animated the smoke from cigar
+* Add page open animation - full page
 */
 
 function HomePage(): JSX.Element {
