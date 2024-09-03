@@ -27,7 +27,7 @@ function WorksPage(): JSX.Element {
         </div>
       </div>
       <div className='content'>
-        <span>:: Works ::</span>
+        <span>:: works ::</span>
       </div>
       <Info />
     </div>

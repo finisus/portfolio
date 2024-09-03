@@ -28,7 +28,7 @@ function AboutPage(): JSX.Element {
         </div>
       </div>
       <div className='content'>
-        <span>:: About ::</span>
+        <span>:: about ::</span>
         <div className='header'>
           <div className='lamp'></div>
           <div className='lamplight'></div>
