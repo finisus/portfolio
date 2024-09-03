@@ -14,7 +14,7 @@ function App(): JSX.Element {
 
   useEffect(() => {
     setIsLaunched(true);
-    setActivePage("AboutPage");
+    setActivePage("HomePage");
   }, []);
 
   useEffect(() => {
