@@ -566,7 +566,6 @@ h3 {
 
 /****/
 
-
 @media screen and (width <= 511px) { .blob-blur-bg svg { scale: 0.4;} }
 @media screen and (width > 511px) and (width <= 611px) { .blob-blur-bg svg { scale: 0.5;} }
 @media screen and (width > 611px) and (width <= 711px) { .blob-blur-bg svg { scale: 0.6;} }
@@ -576,10 +575,9 @@ h3 {
 @media screen and (width > 1420px) and (width <= 1620px) { .blob-blur-bg svg { scale: 1.0; } }
 @media screen and (width > 1620px) and (width <= 1820px) { .blob-blur-bg svg { scale: 1.1; } }
 
-
 @media (hover: none) {
   .island button:hover {
-    background-color: rgb(18, 18, 18);
+    background-color: var(--bgTran);
   }
 
   .island .tooltip {
@@ -589,13 +587,13 @@ h3 {
   }
 
   .hp .socials button:hover {
-    background-color: rgb(18, 18, 18);
+    background-color: transparent;
   }
 
   .scroll-down button:hover {
-    background-color: rgb(18, 18, 18);
+    background-color: transparent;
   }
-.bunnyImg 
+
   .scroll-down .tooltip {
     opacity: 0;
     backdrop-filter: blur(0px);

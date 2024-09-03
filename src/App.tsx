@@ -18,10 +18,14 @@ function App(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 30); // add delay: 0.3s
+
+    return () => clearTimeout(timer);
   }, [activePage]);
 
   if (!isLaunched) {
