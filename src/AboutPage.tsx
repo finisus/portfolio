@@ -1,3 +1,4 @@
+import Info from './Info.tsx';
 import gridDotsSVG from './assets/grid[circular-dots][18x18].svg';
 
 function AboutPage(): JSX.Element {
@@ -28,6 +29,9 @@ function AboutPage(): JSX.Element {
 
       <span>:: About ::</span>
       <h1>I design</h1>
+
+
+      <Info />
     </div>
   );
 }
