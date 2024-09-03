@@ -17,6 +17,13 @@ function App(): JSX.Element {
     setActivePage("HomePage");
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [activePage]);
+
   if (!isLaunched) {
     return (
       <>

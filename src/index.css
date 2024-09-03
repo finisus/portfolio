@@ -18,10 +18,9 @@
   --bgTran: rgba(18, 18, 18, 0.55);
   --text: #efe9d3;
   --text2: rgba(239, 233, 211, 0.55);
-  --accent1: rgb(210, 193, 59);
-  --accent2: rgb(199, 50, 48);
+  --accent1: #d2c13b;
+  --accent2: #c73230;
 
-  /*--yellow: #f1ae3b;*/
   --yellow: #f1bd3b;
   --orange: #f36b17;
   --pink: #e515a9;
@@ -33,7 +32,6 @@
 :root::-webkit-scrollbar {
   display: none;
 }
-
 /* Hide scrollbar for IE, Edge and Firefox */
 :root {
   -ms-overflow-style: none;  /* IE and Edge */
@@ -250,6 +248,23 @@ h3 {
 /**
 * component@ HomePage 
 */
+
+.hp .blob-blur-bg {
+  z-index: -9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1.0;
+  pointer-events: none;
+   
+  filter: blur(64px);
+  -webkit-filter: blur(64px);
+  
+}
+.blob-blur-bg svg {
+  scale: 1.2;
+}
 
 .hp .header {
   margin: 0;
@@ -551,6 +566,17 @@ h3 {
 
 /****/
 
+
+@media screen and (width <= 511px) { .blob-blur-bg svg { scale: 0.4;} }
+@media screen and (width > 511px) and (width <= 611px) { .blob-blur-bg svg { scale: 0.5;} }
+@media screen and (width > 611px) and (width <= 711px) { .blob-blur-bg svg { scale: 0.6;} }
+@media screen and (width > 711px) and (width <= 811px) { .blob-blur-bg svg { scale: 0.7; } }
+@media screen and (width > 811px) and (width <= 1220px) { .blob-blur-bg svg { scale: 0.8; } }
+@media screen and (width > 1220px) and (width <= 1420px) { .blob-blur-bg svg { scale: 0.9; } }
+@media screen and (width > 1420px) and (width <= 1620px) { .blob-blur-bg svg { scale: 1.0; } }
+@media screen and (width > 1620px) and (width <= 1820px) { .blob-blur-bg svg { scale: 1.1; } }
+
+
 @media (hover: none) {
   .island button:hover {
     background-color: rgb(18, 18, 18);
@@ -569,7 +595,7 @@ h3 {
   .scroll-down button:hover {
     background-color: rgb(18, 18, 18);
   }
-
+.bunnyImg 
   .scroll-down .tooltip {
     opacity: 0;
     backdrop-filter: blur(0px);
