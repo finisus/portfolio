@@ -15,6 +15,7 @@
   --bg2_temp: #3C5B6F;
 
   --bg: rgb(18, 18, 18);
+  --bgTran: rgba(18, 18, 18, 0.55);
   --text: #efe9d3;
   --text2: rgba(239, 233, 211, 0.55);
   --accent1: rgb(210, 193, 59);
@@ -39,6 +40,10 @@
   scrollbar-width: none;  /* Firefox */
 } 
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   width: 100vw;
@@ -56,7 +61,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -68,10 +72,12 @@ button {
 h1 {
   font-size: 2.8em;
   line-height: 1.1;
+  margin: 0;
 }
 
 h2 {
   font-size: 2em;
+  margin: 0;
 }
 
 h3 {
@@ -160,14 +166,14 @@ h3 {
   padding: 8px 8px;
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 8px;
-  background-color: var(--bg);
+  background-color: var(--bgTran);
   transition: background-color 0.3s;
 }
 .island button svg {
   color: var(--text);
 }
 .island button:hover {
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(36, 36, 36);
 }
 
 .island .tooltip {
@@ -176,8 +182,8 @@ h3 {
   padding: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  font-size: 0.8em;
-  font-weight: 900;
+  font-family: 'reco';
+  font-size: 12px;
   color: var(--text);
   background-color: transparent;
   backdrop-filter: blur(8px);
@@ -190,6 +196,53 @@ h3 {
 .island .activePage .tooltip {
   color: var(--yellow);
   border: 1px solid rgba(210, 193, 59, 0.2);
+}
+
+.scroll-down {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 16px;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
+                    0 4px 8px 4px rgba(0, 0, 0,0.33),
+                    0 0 0 1px rgba(0, 0, 0, 0.0);
+}
+
+.scroll-down button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 8px;
+  background-color: var(--bgTran);
+  transition: background-color 0.3s;
+}
+.scroll-down button svg {
+  color: var(--text);
+}
+.scroll-down button:hover {
+  background-color: rgb(36, 36, 36);
+}
+
+.scroll-down .tooltip {
+  position: fixed;
+  margin-top: -112px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-family: 'reco';
+  font-size: 12px;
+  white-space: nowrap;
+  color: var(--text);
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /****/
@@ -233,18 +286,6 @@ h3 {
 /**
 * component@ AboutPage
 */
-
-.ap {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 656px;
-  height: calc(100vh - 4em);
-  background-color: transparent;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 
 .ap .gridBackground {
   z-index: -900;
@@ -290,7 +331,19 @@ h3 {
   padding: 0;
 }
 
-.ap span {
+.ap .content {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 656px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.ap .content span {
   font-size: 1.2em;
   color: var(--text2);
 }
@@ -300,18 +353,6 @@ h3 {
 /**
 * component@ WorksPage
 */
-
-.wp {
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
-  max-width: 656px;
-  height: calc(100vh - 4em);
-  background-color: transparent;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 
 .wp .gridBackground {
   z-index: -900;
@@ -357,7 +398,24 @@ h3 {
   padding: 0;
 }
 
-.wp span {
+.wp .info {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.wp .content {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 656px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.wp .content span {
   font-size: 1.2em;
   color: var(--text2);
 }
@@ -507,6 +565,16 @@ h3 {
   .hp .socials button:hover {
     background-color: rgb(18, 18, 18);
   }
+
+  .scroll-down button:hover {
+    background-color: rgb(18, 18, 18);
+  }
+
+  .scroll-down .tooltip {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -539,6 +607,10 @@ h3 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.8em;
     font-weight: 900;
+  }
+
+  .scroll-down {
+    margin-right: 1em;
   }
 
   /****/

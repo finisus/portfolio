@@ -1,3 +1,4 @@
+import Info from './Info.tsx';
 import gridSmallSVG from './assets/grid[pattern-plus][18x18].svg';
 
 function WorksPage(): JSX.Element {
@@ -25,10 +26,10 @@ function WorksPage(): JSX.Element {
           </div>
         </div>
       </div>
-
-      <span>:: Works ::</span>
-
-      
+      <div className='content'>
+        <span>:: Works ::</span>
+      </div>
+      <Info />
     </div>
   );
 }
