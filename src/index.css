@@ -473,7 +473,10 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  /*
   background: radial-gradient(ellipse at center, transparent 25%, black);
+  */
+  background: radial-gradient(ellipse at center, transparent 50%, black);
   pointer-events: none;
 }
 
@@ -515,6 +518,31 @@ h3 {
 .wp .content span {
   font-size: 1.2em;
   color: var(--text);
+}
+
+.wp .content p {
+  font-size: 1.2em;
+  color: var(--text);
+}
+
+.wp .content .marquee {
+  z-index: 999;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.wp .content .marquee div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.wp .content .marquee div span {
+  font-size: 1.2em;
 }
 
 /****/
@@ -789,6 +817,16 @@ h3 {
   .wp .content {
     margin-left: 2em;
     margin-right: 2em;
+  }
+
+  .wp .content span {
+    font-size: 1.2em;
+    color: var(--text);
+  }
+
+  .wp .content p {
+    font-size: 1.2em;
+    color: var(--text);
   }
 
   /****/
