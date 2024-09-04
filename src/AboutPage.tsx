@@ -8,26 +8,41 @@ import skillsBannerImg from './assets/skills-banner-reco.png';
 const preloadSrcList: string[] = [gridDotsSVG, skillsBannerImg];
 
 function AboutPage(): JSX.Element {
-  useEffect(() => {
-    gsap.fromTo('.ap .content .header h1',
-      {
-        y: 32,
-        opacity: 0.1
-      },
-      {
-        duration: 1.5,
-        ease: 'power3.inOut',
-        y: 0,
-        opacity: 1.0
-      }
-    );
-  }, []);
-
   const { imagesPreloaded } = useImagePreloader(preloadSrcList);
+
+  useEffect(() => {
+    if (imagesPreloaded) {
+      gsap.fromTo('.ap .content .header h1',
+        {
+          y: 32,
+          opacity: 0.1
+        },
+        {
+          duration: 1.5,
+          ease: 'power3.inOut',
+          y: 0,
+          opacity: 1.0
+        }
+      );
+  
+      gsap.fromTo('.ap .content .skills img',
+        {
+          opacity: 0.1
+        },
+        {
+          duration: 2.0,
+          ease: 'power4.inOut',
+          opacity: 1.0
+        }
+      );
+    }
+  }, [imagesPreloaded]);
 
   if (!imagesPreloaded) {
     return (
-      <p>Loading...</p>
+      <div className='about-loading'>
+        <p>Loading...</p>
+      </div>
     );
   }
 

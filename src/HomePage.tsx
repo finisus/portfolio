@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import Info from './Info.tsx';
+import useImagePreloader from './hooks/useImagePreloader.tsx';
+
 import titleHeaderImg from './assets/header-playtoy[1080x215][halftone].png';
 import bunnyPlayboyImg from './assets/bunny-playboy[1080x1177][transparentbg][gradient].png'
+const preloadSrcList: string[] = [titleHeaderImg, bunnyPlayboyImg];
 
 const blobBlurBg: JSX.Element = <svg width="1220" height="1161" viewBox="0 0 1220 1161" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_f_1_3)">
@@ -34,43 +37,49 @@ const blobBlurBg: JSX.Element = <svg width="1220" height="1161" viewBox="0 0 122
   </defs>
 </svg>;
 
-/*
-* Maybe animated the smoke from cigar
-* Add page open animation - full page
-*/
-
 function HomePage(): JSX.Element {
+  const { imagesPreloaded } = useImagePreloader(preloadSrcList);
 
   useEffect(() => {
-    gsap.fromTo('.hp .header .titleImg',
-      {
-        y: -240
-      },
-      {
-        duration: 1.5,
-        ease: 'power4.inOut',
-        y: 0
+    if (imagesPreloaded) {
+      gsap.fromTo('.hp .header .titleImg',
+        {
+          y: -240
+        },
+        {
+          duration: 1.5,
+          ease: 'power4.inOut',
+          y: 0
+        }
+      );
+  
+      const handleBlurBunnyOnScroll = () => {
+        const maxBlur = 8; // Maximum blur in pixels
+        const scrollRange = document.body.scrollHeight - window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const blurAmount = (scrollPosition / scrollRange) * maxBlur;
+  
+        const bunnyImg = document.querySelector('.hp .header .bunnyImg') as HTMLElement;
+        if (bunnyImg) {
+          bunnyImg.style.filter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
+          bunnyImg.style.webkitFilter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
+        }
       }
-    );
-
-    const handleBlurBunnyOnScroll = () => {
-      const maxBlur = 8; // Maximum blur in pixels
-      const scrollRange = document.body.scrollHeight - window.innerHeight;
-      const scrollPosition = window.scrollY;
-      const blurAmount = (scrollPosition / scrollRange) * maxBlur;
-
-      const bunnyImg = document.querySelector('.hp .header .bunnyImg') as HTMLElement;
-      if (bunnyImg) {
-        bunnyImg.style.filter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
-        bunnyImg.style.webkitFilter = `blur(${Math.min(blurAmount, maxBlur)}px)`;
-      }
+      window.addEventListener('scroll', handleBlurBunnyOnScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleBlurBunnyOnScroll);
+      };
     }
-    window.addEventListener('scroll', handleBlurBunnyOnScroll);
+  }, [imagesPreloaded]);
 
-    return () => {
-      window.removeEventListener('scroll', handleBlurBunnyOnScroll);
-    };
-  }, []);
+  if (!imagesPreloaded) {
+    return (
+      <div className='home-loading'>
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="hp">
