@@ -1,8 +1,25 @@
+import { useEffect } from 'react';
+import gsap from 'gsap';
 import Info from './Info.tsx';
 import gridDotsSVG from './assets/grid[circular-dots][18x18].svg';
 import skillsBannerImg from './assets/skills-banner-reco.png';
 
 function AboutPage(): JSX.Element {
+  useEffect(() => {
+    gsap.fromTo('.ap .content .header h1',
+      {
+        y: 32,
+        opacity: 0.1
+      },
+      {
+        duration: 1.5,
+        ease: 'power3.inOut',
+        y: 0,
+        opacity: 1.0
+      }
+    );
+  }, []);
+
   return(
     <div className="ap">
       <div className="gridBackground">

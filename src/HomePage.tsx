@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import gsap from 'gsap';
 import Info from './Info.tsx';
 import titleHeaderImg from './assets/header-playtoy[1080x215][halftone].png';
 import bunnyPlayboyImg from './assets/bunny-playboy[1080x1177][transparentbg][gradient].png'
@@ -41,6 +42,17 @@ const blobBlurBg: JSX.Element = <svg width="1220" height="1161" viewBox="0 0 122
 function HomePage(): JSX.Element {
 
   useEffect(() => {
+    gsap.fromTo('.hp .header .titleImg',
+      {
+        y: -240
+      },
+      {
+        duration: 1.5,
+        ease: 'power4.inOut',
+        y: 0
+      }
+    );
+
     const handleBlurBunnyOnScroll = () => {
       const maxBlur = 8; // Maximum blur in pixels
       const scrollRange = document.body.scrollHeight - window.innerHeight;
