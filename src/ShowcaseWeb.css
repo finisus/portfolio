@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'geist-mono-reg';
+  src: url('./assets/typeface/GeistMono-Regular.woff2');
+}
+
+.showcase {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background-color: rgba(18, 18, 18, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 100%;
+  height: auto;
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-family: 'geist-mono-reg';
+  color: #efe9d3;
+}
+
+.showcase h3 {
+  font-size: 14px;
+  margin: 0;
+  pointer-events: none;
+  color: #efe9d3;
+}
+
+.showcase img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: transparent;
+  border-radius: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.showcase .preview {
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: #efe9d3;
+}
+
+.showcase .linkPopup {
+  z-index: 999;
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: calc(100% - 4px);
+  background-color: rgba(18, 18, 18, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: transparent;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px !important;
+  color: #efe9d3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.preview:hover .linkPopup {
+  opacity: 1; /* Show on hover */
+}

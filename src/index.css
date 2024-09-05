@@ -532,6 +532,7 @@ h3 {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+  overflow: hidden;
 }
 
 .wp .content .marquee div {
@@ -543,6 +544,25 @@ h3 {
 
 .wp .content .marquee div span {
   font-size: 1.2em;
+}
+
+.wp .showcase-container {
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px; 
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wp .showcase-container .showcase {
+  width: calc(100% - 16px);
+}
+
+.wp .showcase-container .showcase:nth-child(even) {
+  transform: translateY(48px);
 }
 
 /****/

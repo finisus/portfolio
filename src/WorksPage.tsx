@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import Marquee from "react-fast-marquee";
 import Info from './Info.tsx';
+import ShowcaseWeb from './ShowcaseWeb.tsx';
+import Marquee from "react-fast-marquee";
 import useImagePreloader from './hooks/useImagePreloader.tsx';
 
 import gridSmallSVG from './assets/grid[pattern-plus][18x18].svg';
@@ -10,7 +11,15 @@ import jsIconSVG from './assets/tech-stack-icons/js-svgrepo-com.svg';
 import reactIconSVG from './assets/tech-stack-icons/react-svgrepo-com.svg';
 import tsIconSVG from './assets/tech-stack-icons/typescript-icon-svgrepo-com.svg';
 import ethIconSVG from './assets/tech-stack-icons/ethereum-crypto-cryptocurrency-2-svgrepo-com.svg';
-const preloadSrcList: string[] = [gridSmallSVG, htmlIconSVG, cssIconSVG, jsIconSVG, reactIconSVG, tsIconSVG, ethIconSVG];
+
+import ceicatPreview from './assets/workPreviews/ceicat-preview[640x359].png';
+import ceicatPfpGenPreview from './assets/workPreviews/ceicat-pfpgen-preview[640x359].png';
+import billyPreview from './assets/workPreviews/billy-preview[640x359].png';
+import y2kPreview from './assets/workPreviews/y2k-preview[640x359].png';
+import chomikPreview from './assets/workPreviews/chomik-preview[640x359].png';
+import wechoosewealthPreview from './assets/workPreviews/we-choose-wealth-preview[640x359].png';
+
+const preloadSrcList: string[] = [gridSmallSVG, htmlIconSVG, cssIconSVG, jsIconSVG, reactIconSVG, tsIconSVG, ethIconSVG, ceicatPreview, ceicatPfpGenPreview, billyPreview, y2kPreview];
 
 function WorksPage(): JSX.Element {
   const { imagesPreloaded } = useImagePreloader(preloadSrcList);
@@ -107,7 +116,51 @@ function WorksPage(): JSX.Element {
           </div>
           <div /><div />
         </Marquee>
+        <div className='showcase-container'>
 
+          <ShowcaseWeb 
+            meter={90}
+            preview={<img src={ceicatPreview} />} 
+            name={"$CEICAT - Ceiling Cat"}
+            link={"https://finisus-ceicat.vercel.app/"}
+          />
+
+          <ShowcaseWeb 
+            meter={50} 
+            preview={<img src={ceicatPfpGenPreview} />}
+            name={"Ceiling Cat's PFP Gen"}
+            link={"https://finisus-ceicat-pfpgen.vercel.app/"}
+          />
+
+          <ShowcaseWeb
+            meter={50}
+            preview={<img src={billyPreview} />}
+            name={"$BILLY - My rendition"}
+            link={"https://finisus-billy.vercel.app/"}
+          />
+
+          <ShowcaseWeb
+            meter={50}
+            preview={<img src={y2kPreview} />}
+            name={"Y2K"}
+            link={"https://finisus-y2k.vercel.app/"}
+          />
+
+          <ShowcaseWeb
+            meter={50}
+            preview={<img src={chomikPreview} />}
+            name={"Chomik"}
+            link={"https://finisus-chomik.vercel.app/"}
+          /> 
+
+          <ShowcaseWeb
+            meter={50}
+            preview={<img src={wechoosewealthPreview} />}
+            name={"Chomik"}
+            link={"https://finisus-wechosewealth.vercel.app/"}
+          /> 
+
+        </div>
       </div>
       <Info />
     </div>
