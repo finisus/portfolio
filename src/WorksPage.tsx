@@ -83,7 +83,19 @@ function WorksPage(): JSX.Element {
       </div>
 
       <div className='content'>
-        <span>:: works ::</span>
+        <span>
+          <span style={{ color: '#f2d5cf' }}>:</span>
+          <span style={{ color: '#f4b8e4' }}>:</span> 
+          <span> </span>
+          <span style={{ color: '#e78284' }}>w</span>
+          <span style={{ color: '#ef9f76' }}>o</span>
+          <span style={{ color: '#e5c890' }}>r</span>
+          <span style={{ color: '#a6d189' }}>k</span>
+          <span style={{ color: '#99d1db' }}>s</span>
+          <span> </span>
+          <span style={{ color: '#8caaee' }}>:</span>
+          <span style={{ color: '#ca9ee6' }}>:</span>
+        </span>
         <p>
           Here lies a collection of few of my works,
           organised in the best way I could some of my...
