@@ -369,13 +369,15 @@ h3 {
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2em;
   max-width: 656px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   text-align: center;
+  overflow: hidden;
 }
 
 .ap .content span {
@@ -435,13 +437,9 @@ h3 {
   }
 }
 
-.ap .content .skills {
-  margin-bottom: 7.5em;
-}
-
 .ap .content .skills img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /****/
