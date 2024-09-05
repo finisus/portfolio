@@ -3,6 +3,16 @@
   src: url('./assets/typeface/GeistMono-Regular.woff2');
 }
 
+@font-face {
+  font-family: 'cabrito';
+  src: url('./assets/typeface/cabritodidonenormregular-webfont.woff2');
+}
+
+@font-face {
+  font-family: 'blox';
+  src: url('./assets/typeface/Blox-webfont.woff2');
+}
+
 .showcase {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -11,7 +21,10 @@
   -webkit-backdrop-filter: blur(8px);
   width: 100%;
   height: auto;
-  padding: 8px 8px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,29 +41,31 @@
   color: #efe9d3;
 }
 
-.showcase img {
+.showcase .preview {
+  position: relative;
+  width: calc(100% - 16px);
+  height: auto;
+  color: #efe9d3;
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.preview img {
   width: 100%;
   height: auto;
   margin: 0;
   border: transparent;
   border-radius: 16px;
   opacity: 0.8;
-  cursor: pointer;
-}
-
-.showcase .preview {
-  position: relative;
-  width: 100%;
-  height: auto;
-  color: #efe9d3;
 }
 
 .showcase .linkPopup {
   z-index: 999;
   position: absolute;
   top: 0; 
-  left: 0;
-  width: 100%;
+  left: 8px;
+  width: calc(100% - 16px);
   height: calc(100% - 4px);
   background-color: rgba(18, 18, 18, 0.55);
   backdrop-filter: blur(8px);
@@ -69,4 +84,54 @@
 
 .preview:hover .linkPopup {
   opacity: 1; /* Show on hover */
+}
+
+.loadingBar .bg-curved-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 66px;
+  border: transparent;
+  border-top-left-radius: 16px; 
+  border-top-right-radius: 16px;
+  opacity: 0.055;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.showcase .loadingBar {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; 
+  justify-items: center;
+  align-items: center;
+  background: none;
+  pointer-events: none;
+}
+
+.loadingBar img {
+  border-radius: none;
+  height: 20px;
+}
+
+.loadingBar .normalText {
+  font-family: 'cabrito' !important;
+  color: #efe9d3 !important;
+  font-size: 16px !important;
+}
+
+.loadingBar .quirkyText {
+  font-family: 'blox' !important;
+  color: #efe9d3 !important;
+  font-size: 16px !important;
 }

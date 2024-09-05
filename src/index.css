@@ -145,7 +145,7 @@ h3 {
   align-items: center;
   gap: 8px;
   padding: 8px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(239, 233, 211, 0.075);
   border-radius: 16px;
   background-color: transparent;
   backdrop-filter: blur(8px);
@@ -162,7 +162,7 @@ h3 {
   font-family: 'reco';
   font-size: 16px;
   padding: 8px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(239, 233, 211, 0.075);
   border-radius: 8px;
   background-color: var(--bgTran);
   transition: background-color 0.3s;
@@ -178,7 +178,7 @@ h3 {
   position: fixed;
   margin-top: -112px;
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(239, 233, 211, 0.1);
   border-radius: 8px;
   font-family: 'reco';
   font-size: 12px;
@@ -201,7 +201,7 @@ h3 {
   right: 0;
   bottom: 0;
   padding: 8px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(239, 233, 211, 0.075);
   border-radius: 16px;
   background-color: transparent;
   backdrop-filter: blur(8px);
@@ -216,7 +216,7 @@ h3 {
   justify-content: center;
   align-items: center;
   padding: 8px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(239, 233, 211, 0.075);
   border-radius: 8px;
   background-color: var(--bgTran);
   transition: background-color 0.3s;
@@ -232,7 +232,7 @@ h3 {
   position: fixed;
   margin-top: -112px;
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(239, 233, 211, 0.1);
   border-radius: 8px;
   font-family: 'reco';
   font-size: 12px;
@@ -532,6 +532,7 @@ h3 {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+  height: 64px;
   overflow: hidden;
 }
 
@@ -547,6 +548,7 @@ h3 {
 }
 
 .wp .showcase-container {
+  padding: 16px;
   margin-bottom: 2em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -558,7 +560,7 @@ h3 {
 }
 
 .wp .showcase-container .showcase {
-  width: calc(100% - 16px);
+  width: 100%;
 }
 
 .wp .showcase-container .showcase:nth-child(even) {
@@ -766,7 +768,7 @@ h3 {
 
   .island button {
     padding: 8px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(239, 233, 211, 0.075);
     border-radius: 8px;
   }
 
@@ -774,7 +776,7 @@ h3 {
     position: fixed;
     margin-top: -104px;
     padding: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(239, 233, 211, 0.1);
     font-size: 0.8em;
     font-weight: 900;
   }
@@ -847,6 +849,35 @@ h3 {
   .wp .content p {
     font-size: 1.2em;
     color: var(--text);
+  }
+
+  .wp .content .marquee {
+    margin-top: 0.8em;
+    margin-bottom: 1.2em;
+    height: 320px;
+  }
+
+  .wp .showcase-container {
+    padding: 4px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px; 
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .wp .showcase-container .showcase {
+    width: 100%;
+  }
+
+  .wp .showcase-container .showcase:nth-child(even) {
+    transform: translateY(0px);
   }
 
   /****/
