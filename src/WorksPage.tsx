@@ -83,7 +83,7 @@ function WorksPage(): JSX.Element {
       </div>
 
       <div className='content'>
-        <span>
+        <span style={{ fontSize: '1.0em '}}>
           <span style={{ color: '#f2d5cf' }}>:</span>
           <span style={{ color: '#f4b8e4' }}>:</span> 
           <span> </span>

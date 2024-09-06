@@ -758,28 +758,27 @@ h3 {
   }
 
   .island {
-    gap: 8px;
-    padding: 8px 8px;
+    gap: 6px;
+    padding: 6px 6px;
     border-radius: 16px;
   }
 
   .island button {
-    padding: 8px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 11px;
     border: 1px solid rgba(239, 233, 211, 0.075);
-    border-radius: 8px;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
-
-  .island .tooltip {
-    position: fixed;
-    margin-top: -104px;
-    padding: 6px;
-    border: 1px solid rgba(239, 233, 211, 0.1);
-    font-size: 0.8em;
-    font-weight: 900;
-  }
-
-  .scroll-down {
-    margin-right: 1em;
+  .island button svg {
+    width: 22px;
+    height: 22px;
   }
 
   /****/
