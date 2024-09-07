@@ -755,6 +755,11 @@ h3 {
   .navbar {
     margin: 2em 1em;
     width: calc(100% - 2em);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
   }
 
   .island {
@@ -779,6 +784,48 @@ h3 {
   .island button svg {
     width: 22px;
     height: 22px;
+  }
+  .island button:nth-child(1) svg {
+    width: 20px;
+    height: 22px;
+  }
+  .island button:nth-child(2) svg {
+    width: 21px;
+    height: 22px;
+  }
+
+  .scrolldown-mbl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 6px;
+    border: 1px solid rgba(239, 233, 211, 0.075);
+    border-radius: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
+                      0 4px 8px 4px rgba(0, 0, 0,0.33),
+                      0 0 0 1px rgba(0, 0, 0, 0.0);
+  }
+
+  .scrolldown-mbl button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 11px;
+    border: 1px solid rgba(239, 233, 211, 0.075);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: flex;
+    font-family: 'reco';
+    background-color: var(--bgTran);
   }
 
   /****/

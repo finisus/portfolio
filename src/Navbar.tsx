@@ -68,9 +68,11 @@ function Navbar({ activePage, setActivePage }: NavbarProps): JSX.Element {
               Works
             </span>
           </button>
+        </div>
+        <div className="scrolldown-mbl">
           <button onClick={scrollToBottom}>
-            {doubleArrowDownSVG}
-            <span className="desc">Scroll</span>
+              {doubleArrowDownSVG}
+              <span className="desc">Scroll</span>
           </button>
         </div>
       </div> 
