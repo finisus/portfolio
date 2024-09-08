@@ -10,6 +10,7 @@ import cssIconSVG from './assets/tech-stack-icons/css-3-svgrepo-com.svg';
 import jsIconSVG from './assets/tech-stack-icons/js-svgrepo-com.svg';
 import reactIconSVG from './assets/tech-stack-icons/react-svgrepo-com.svg';
 import tsIconSVG from './assets/tech-stack-icons/typescript-icon-svgrepo-com.svg';
+import tailwindSVG from './assets/tech-stack-icons/tailwindcss-mark.svg';
 import ethIconSVG from './assets/tech-stack-icons/ethereum-crypto-cryptocurrency-2-svgrepo-com.svg';
 
 import ceicatPreview from './assets/workPreviews/ceicat-preview[640x359].png';
@@ -34,8 +35,8 @@ import ricardomemePreview from './assets/workPreviews/ricardo-meme-preview[640x3
 import nyanpopPreview from './assets/workPreviews/nyanpop-preview[640x359].png';
 import shirocatPreview from './assets/workPreviews/shiro-cat-preview[640x359].png';
 
-const preloadSrcList: string[] = [gridSmallSVG, htmlIconSVG, cssIconSVG, jsIconSVG, reactIconSVG, tsIconSVG, ethIconSVG, 
-  ceicatPreview, ceicatPfpGenPreview, billyPreview, y2kPreview, pizzagatePreview, solanacartelPreview, failanaPreview, 
+const preloadSrcList: string[] = [gridSmallSVG, htmlIconSVG, cssIconSVG, jsIconSVG, reactIconSVG, tsIconSVG, tailwindSVG, 
+  ethIconSVG, ceicatPreview, ceicatPfpGenPreview, billyPreview, y2kPreview, pizzagatePreview, solanacartelPreview, failanaPreview, 
   lethimcookPreview, skbdiPreview, catwifgoldPreview, torocatPreview, lickcatPreview, roaringpixelkittyPreview, lvdogPreview,
   mochadogPreview, reetardsPreview, ricardomemePreview, nyanpopPreview, shirocatPreview ];
 
@@ -116,32 +117,36 @@ function WorksPage(): JSX.Element {
           gradientWidth={80}
         >
           <div>
-            <img src={htmlIconSVG} style={{ width: '20px', height: '20px'}} />
+            <img src={htmlIconSVG} style={{ width: '20px', height: '20px' }} />
             <span>HTML5</span>
           </div>
           <div /><div />
           <div>
-            <img src={cssIconSVG} style={{ width: '20px', height: '20px'}} />
+            <img src={cssIconSVG} style={{ width: '20px', height: '20px' }} />
             <span>CSS3</span>
           </div>
           <div /><div />
           <div>
-            <img src={jsIconSVG} style={{ width: '20px', height: '20px'}} />
+            <img src={jsIconSVG} style={{ width: '20px', height: '20px' }} />
             <span>Javascript</span>
           </div>
           <div /><div />
           <div>
-            <img src={reactIconSVG} style={{ width: '20px', height: '20px'}} />
+            <img src={reactIconSVG} style={{ width: '20px', height: '20px' }} />
             <span>React</span>
           </div>
           <div /><div /> 
           <div>
-            <img src={tsIconSVG} style={{ width: '18px', height: '18px'}} />
+            <img src={tsIconSVG} style={{ width: '18px', height: '18px' }} />
             <span>Typescript</span>
+          </div>
+          <div>
+            <img src={tailwindSVG} style={{ width: '22px', height: '22px' }} />
+            <span>Tailwind CSS</span>
           </div>
           <div /><div />
           <div>
-            <img src={ethIconSVG} style={{ width: '22px', height: '22px'}} />
+            <img src={ethIconSVG} style={{ width: '22px', height: '22px' }} />
             <span>Web3.js</span>
           </div>
           <div /><div />
