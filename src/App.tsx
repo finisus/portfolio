@@ -7,15 +7,11 @@ import HomePage from "./HomePage.tsx";
 import AboutPage from "./AboutPage.tsx";
 import WorksPage from "./WorksPage.tsx";
 
-export type ActivePage = "HomePage" | "AboutPage" | "WorksPage";
-
 function App(): JSX.Element {
   const [isLaunched, setIsLaunched] = useState<boolean>(false);
-  const [activePage, setActivePage] = useState<ActivePage>("HomePage");
 
   useEffect(() => {
     setIsLaunched(true);
-    setActivePage("HomePage");
   }, []);
 
   useEffect(() => {
@@ -27,7 +23,7 @@ function App(): JSX.Element {
     }, 30); // add delay: 0.3s
 
     return () => clearTimeout(timer);
-  }, [activePage]);
+  }, []);
 
   if (!isLaunched) {
     return (
@@ -40,7 +36,7 @@ function App(): JSX.Element {
   return (
     <Router>
       <StaticNoise />
-      <Navbar activePage={activePage} setActivePage={setActivePage} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -51,4 +47,3 @@ function App(): JSX.Element {
 }
 
 export default App;
-
