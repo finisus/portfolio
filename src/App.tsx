@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import TempLanding from "./TempLanding.tsx";
 import StaticNoise from "./StaticNoise.tsx";
@@ -21,7 +22,7 @@ function App(): JSX.Element {
     const timer = setTimeout(() => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }, 30); // add delay: 0.3s
 
@@ -31,20 +32,23 @@ function App(): JSX.Element {
   if (!isLaunched) {
     return (
       <>
-        <TempLanding /> 
+        <TempLanding />
       </>
     );
   }
 
   return (
-    <>
+    <Router>
       <StaticNoise />
       <Navbar activePage={activePage} setActivePage={setActivePage} />
-      {activePage === "HomePage" ? <HomePage /> : null}
-      {activePage === "AboutPage" ? <AboutPage /> : null}
-      {activePage === "WorksPage" ? <WorksPage /> : null}
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/works" element={<WorksPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+

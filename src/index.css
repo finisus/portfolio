@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'reco';
-  src: url('./assets/typeface/Recoleta-RegularDEMO.otf');
+  font-family: "reco";
+  src: url("./assets/typeface/Recoleta-RegularDEMO.otf");
 }
 
 @font-face {
-  font-family: 'playtoy';
-  src: url('./assets/typeface/playtoy.woff2');
+  font-family: "playtoy";
+  src: url("./assets/typeface/playtoy.woff2");
 }
 
 :root {
-  --text_temp: #F3F7EC;
+  --text_temp: #f3f7ec;
   --overlay_temp: rgb(60, 91, 111, 0.75);
   --bg_temp: #153448;
-  --bg2_temp: #3C5B6F;
+  --bg2_temp: #3c5b6f;
 
   --bg: rgb(18, 18, 18);
   --bgTran: rgba(18, 18, 18, 0.55);
@@ -34,9 +34,9 @@
 }
 /* Hide scrollbar for IE, Edge and Firefox */
 :root {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-} 
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 html {
   scroll-behavior: smooth;
@@ -53,7 +53,7 @@ body {
   align-items: stretch;
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'reco'; 
+  font-family: "reco";
   line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -98,7 +98,7 @@ h3 {
   z-index: 90;
   overflow: hidden;
   pointer-events: none;
-  background: transparent url('./assets/staticNoise-transparent.png') repeat 0 0;
+  background: transparent url("./assets/staticNoise-transparent.png") repeat 0 0;
   background-repeat: repeat;
   animation: staticNoise-animation 0.2s infinite;
   opacity: 0.9;
@@ -106,17 +106,39 @@ h3 {
 }
 
 @keyframes staticNoise-animation {
-  0% { transform: translate(0,0) }
-  10% { transform: translate(-5%,-5%) }
-  20% { transform: translate(-10%,5%) }
-  30% { transform: translate(5%,-10%) }
-  40% { transform: translate(-5%,15%) }
-  50% { transform: translate(-10%,5%) }
-  60% { transform: translate(15%,0) }
-  70% { transform: translate(0,10%) }
-  80% { transform: translate(-15%,0) }
-  90% { transform: translate(10%,5%) }
-  100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
 }
 
 /****/
@@ -150,16 +172,17 @@ h3 {
   background-color: transparent;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
-                    0 4px 8px 4px rgba(0, 0, 0,0.33),
-                    0 0 0 1px rgba(0, 0, 0, 0.0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0),
+    0 4px 8px 4px rgba(0, 0, 0, 0.33),
+    0 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.island button {
+.island a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'reco';
+  font-family: "reco";
   font-size: 16px;
   padding: 8px 8px;
   border: 1px solid rgba(239, 233, 211, 0.075);
@@ -167,10 +190,10 @@ h3 {
   background-color: var(--bgTran);
   transition: background-color 0.3s;
 }
-.island button svg {
+.island a svg {
   color: var(--text);
 }
-.island button:hover {
+.island a:hover {
   background-color: rgb(36, 36, 36);
 }
 
@@ -180,7 +203,7 @@ h3 {
   padding: 6px;
   border: 1px solid rgba(239, 233, 211, 0.1);
   border-radius: 8px;
-  font-family: 'reco';
+  font-family: "reco";
   font-size: 12px;
   color: var(--text);
   background-color: transparent;
@@ -206,9 +229,10 @@ h3 {
   background-color: transparent;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
-                    0 4px 8px 4px rgba(0, 0, 0,0.33),
-                    0 0 0 1px rgba(0, 0, 0, 0.0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0),
+    0 4px 8px 4px rgba(0, 0, 0, 0.33),
+    0 0 0 1px rgba(0, 0, 0, 0);
 }
 
 .scroll-down button {
@@ -234,7 +258,7 @@ h3 {
   padding: 6px;
   border: 1px solid rgba(239, 233, 211, 0.1);
   border-radius: 8px;
-  font-family: 'reco';
+  font-family: "reco";
   font-size: 12px;
   white-space: nowrap;
   color: var(--text);
@@ -255,12 +279,12 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1.0;
+  opacity: 1;
   pointer-events: none;
   /* 
   filter: blur(64px);
   -webkit-filter: blur(64px);
-  */ 
+  */
   animation: 3s ease-in-out noShowToShow forwards;
 }
 .blob-blur-bg svg {
@@ -269,10 +293,10 @@ h3 {
 
 @keyframes noShowToShow {
   0% {
-    opacity: 0.0;
-  } 
+    opacity: 0;
+  }
   100% {
-    opacity: 1.0;
+    opacity: 1;
   }
 }
 
@@ -299,10 +323,12 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1.0;
+  opacity: 1;
   filter: blur(0px);
   -webkit-filter: blur(0px);
-  transition: filter 0.75s, -webkit-filter 0.75s;
+  transition:
+    filter 0.75s,
+    -webkit-filter 0.75s;
   animation: 1s ease-in-out slideInFromBottom forwards;
 }
 
@@ -335,7 +361,7 @@ h3 {
   pointer-events: none;
 }
 .ap .gridBackground::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -410,11 +436,11 @@ h3 {
   border-right: 0.1px solid var(--bg);
   background-color: rgb(241, 189, 59);
   box-shadow: 0px -16px 64px 8px rgb(123, 97, 30);
-  animation: 1s ease-in-out growLight forwards
+  animation: 1s ease-in-out growLight forwards;
 }
 
 .ap .lamplight {
-  opacity: 1.0;
+  opacity: 1;
   position: absolute;
   margin-top: -240px;
   z-index: -1;
@@ -425,13 +451,13 @@ h3 {
   filter: blur(20px);
   -webkit-filter: blur(20px);
   box-shadow: 0px 80px 160px 48px rgb(241, 189, 59);
-  animation: 1s ease-in-out growLight forwards
+  animation: 1s ease-in-out growLight forwards;
 }
 
 @keyframes growLight {
   0% {
     width: 240px;
-  } 
+  }
   100% {
     width: 640px;
   }
@@ -462,7 +488,7 @@ h3 {
   pointer-events: none;
 }
 .wp .gridBackground::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -551,7 +577,7 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 24px;
-  grid-row-gap: 24px; 
+  grid-row-gap: 24px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -574,7 +600,7 @@ h3 {
   position: fixed;
   top: 0;
   left: 0;
-  font-family: 'reco';
+  font-family: "reco";
   line-height: 2;
   width: 100vw;
   height: 100vh;
@@ -628,8 +654,11 @@ h3 {
   z-index: 999;
   border: 1px solid var(--overlay_temp);
   color: var(--text_temp);
-  background-color: rgba(255, 255, 255, 0.0);
-  transition: border-color 1s, background-color 1.0s, color 0.5s;
+  background-color: rgba(255, 255, 255, 0);
+  transition:
+    border-color 1s,
+    background-color 1s,
+    color 0.5s;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -676,7 +705,7 @@ h3 {
   object-fit: cover;
   margin: 0;
   padding: 0;
-  opacity: 1.0;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -695,17 +724,49 @@ h3 {
 
 /****/
 
-@media screen and (width <= 511px) { .blob-blur-bg svg { scale: 0.4;} }
-@media screen and (width > 511px) and (width <= 611px) { .blob-blur-bg svg { scale: 0.5;} }
-@media screen and (width > 611px) and (width <= 711px) { .blob-blur-bg svg { scale: 0.6;} }
-@media screen and (width > 711px) and (width <= 811px) { .blob-blur-bg svg { scale: 0.7; } }
-@media screen and (width > 811px) and (width <= 1220px) { .blob-blur-bg svg { scale: 0.8; } }
-@media screen and (width > 1220px) and (width <= 1420px) { .blob-blur-bg svg { scale: 0.9; } }
-@media screen and (width > 1420px) and (width <= 1620px) { .blob-blur-bg svg { scale: 1.0; } }
-@media screen and (width > 1620px) and (width <= 1820px) { .blob-blur-bg svg { scale: 1.1; } }
+@media screen and (width <= 511px) {
+  .blob-blur-bg svg {
+    scale: 0.4;
+  }
+}
+@media screen and (width > 511px) and (width <= 611px) {
+  .blob-blur-bg svg {
+    scale: 0.5;
+  }
+}
+@media screen and (width > 611px) and (width <= 711px) {
+  .blob-blur-bg svg {
+    scale: 0.6;
+  }
+}
+@media screen and (width > 711px) and (width <= 811px) {
+  .blob-blur-bg svg {
+    scale: 0.7;
+  }
+}
+@media screen and (width > 811px) and (width <= 1220px) {
+  .blob-blur-bg svg {
+    scale: 0.8;
+  }
+}
+@media screen and (width > 1220px) and (width <= 1420px) {
+  .blob-blur-bg svg {
+    scale: 0.9;
+  }
+}
+@media screen and (width > 1420px) and (width <= 1620px) {
+  .blob-blur-bg svg {
+    scale: 1;
+  }
+}
+@media screen and (width > 1620px) and (width <= 1820px) {
+  .blob-blur-bg svg {
+    scale: 1.1;
+  }
+}
 
 @media (hover: none) {
-  .island button:hover {
+  .island a:hover {
     background-color: var(--bgTran);
   }
 
@@ -731,18 +792,17 @@ h3 {
 }
 
 @media screen and (max-width: 720px) {
-
   h1 {
     font-size: 2.2em;
     line-height: 1.1;
     margin: 0;
   }
-  
+
   h2 {
     font-size: 1.6em;
     margin: 0;
   }
-  
+
   h3 {
     margin: 0;
     font-size: 1.2em;
@@ -768,7 +828,7 @@ h3 {
     border-radius: 16px;
   }
 
-  .island button {
+  .island a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -781,15 +841,15 @@ h3 {
     font-size: 10px;
     letter-spacing: 0.5px;
   }
-  .island button svg {
+  .island a svg {
     width: 22px;
     height: 22px;
   }
-  .island button:nth-child(1) svg {
+  .island a:nth-child(1) svg {
     width: 20px;
     height: 22px;
   }
-  .island button:nth-child(2) svg {
+  .island a:nth-child(2) svg {
     width: 21px;
     height: 22px;
   }
@@ -805,9 +865,10 @@ h3 {
     background-color: transparent;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.0),
-                      0 4px 8px 4px rgba(0, 0, 0,0.33),
-                      0 0 0 1px rgba(0, 0, 0, 0.0);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0),
+      0 4px 8px 4px rgba(0, 0, 0, 0.33),
+      0 0 0 1px rgba(0, 0, 0, 0);
   }
 
   .scrolldown-mbl button {
@@ -824,7 +885,7 @@ h3 {
     letter-spacing: 0.5px;
     text-align: center;
     display: flex;
-    font-family: 'reco';
+    font-family: "reco";
     background-color: var(--bgTran);
   }
 
@@ -862,23 +923,23 @@ h3 {
     margin-bottom: 1em;
     scale: 0.8;
   }
-  
+
   .ap .lamp {
     margin-top: -160px;
     scale: 0.4;
   }
-  
+
   .ap .lamplight {
     margin-top: -160px;
     scale: 0.4;
   }
-  
+
   /****/
 
   /**
   * component@ WorksPage
   */
-  
+
   .wp .content {
     margin-left: 2em;
     margin-right: 2em;
@@ -910,7 +971,7 @@ h3 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 32px; 
+    gap: 32px;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -932,14 +993,14 @@ h3 {
   #tempLanding h1 {
     font-size: 3.2em;
   }
-  
+
   #tempLanding h2 {
     font-size: 1.6em;
   }
-  
+
   #tempLanding p {
     font-size: 0.8em;
-  } 
+  }
 
   #tempLanding button {
     padding: 0.3em 0.6em;
@@ -971,7 +1032,7 @@ h3 {
   #tempLanding #bgNoiseSvg {
     opacity: 0.6;
   }
-  
+
   #tempLanding #starSvg {
     top: -25vh;
     right: -50vh;
@@ -979,5 +1040,5 @@ h3 {
   }
 
   /****/
-
 }
+
