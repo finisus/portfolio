@@ -1,33 +1,31 @@
-import stylisticPlugin from '@stylistic/eslint-plugin'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import stylisticPlugin from "@stylistic/eslint-plugin";
+import eslintConfigPrettier from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import-x";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import nodePlugin from "eslint-plugin-n";
 // @ts-expect-error
-import drizzle from 'eslint-plugin-drizzle'
-import importPlugin from 'eslint-plugin-import-x'
-import nodePlugin from 'eslint-plugin-n'
-// @ts-expect-error
-import onlyWarn from 'eslint-plugin-only-warn'
-import pnpmPlugin from 'eslint-plugin-pnpm'
-import globals from 'globals'
-import jsoncParser from 'jsonc-eslint-parser'
-import tseslint from 'typescript-eslint'
-import yamlParser from 'yaml-eslint-parser'
-import pluginReactHooks from 'eslint-plugin-react-hooks'
-import pluginReact from 'eslint-plugin-react'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
+import onlyWarn from "eslint-plugin-only-warn";
+import pnpmPlugin from "eslint-plugin-pnpm";
+import pluginReact from "eslint-plugin-react";
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import globals from "globals";
+import jsoncParser from "jsonc-eslint-parser";
+import tseslint from "typescript-eslint";
+import yamlParser from "yaml-eslint-parser";
 
 /** @type {import("eslint").Linter.Config[]} */
 const baseConfig = [
   eslintConfigPrettier,
 
   {
-    name: 'ignores',
-    ignores: ['**/dist/**', '**/vite.config.*.timestamp-*.*'],
+    name: "ignores",
+    ignores: ["**/dist/**", "**/vite.config.*.timestamp-*.*"],
   },
 
   {
-    files: ['**/*.{js,ts,tsx}'],
+    files: ["**/*.{js,ts,tsx}"],
     languageOptions: {
-      sourceType: 'module',
+      sourceType: "module",
       ecmaVersion: 2022,
       parser: tseslint.parser,
       parserOptions: {
@@ -39,146 +37,143 @@ const baseConfig = [
       },
     },
     plugins: {
-      '@stylistic': stylisticPlugin,
-      '@typescript-eslint': tseslint.plugin,
+      "@stylistic": stylisticPlugin,
+      "@typescript-eslint": tseslint.plugin,
       // @ts-expect-error
       import: importPlugin,
       node: nodePlugin,
-      drizzle,
       onlyWarn,
     },
     rules: {
-      ...drizzle.configs.recommended.rules,
-
       // Javascript Rules
-      'for-direction': 'error',
-      'no-async-promise-executor': 'error',
-      'no-case-declarations': 'error',
-      'no-class-assign': 'error',
-      'no-compare-neg-zero': 'error',
-      'no-cond-assign': 'error',
-      'no-constant-binary-expression': 'error',
-      'no-constant-condition': 'error',
-      'no-control-regex': 'error',
-      'no-debugger': 'error',
-      'no-delete-var': 'error',
-      'no-dupe-else-if': 'error',
-      'no-duplicate-case': 'error',
-      'no-empty-character-class': 'error',
-      'no-empty-pattern': 'error',
-      'no-empty-static-block': 'error',
-      'no-ex-assign': 'error',
-      'no-extra-boolean-cast': 'error',
-      'no-fallthrough': 'error',
-      'no-global-assign': 'error',
-      'no-invalid-regexp': 'error',
-      'no-irregular-whitespace': 'error',
-      'no-loss-of-precision': 'error',
-      'no-misleading-character-class': 'error',
-      'no-nonoctal-decimal-escape': 'error',
-      'no-octal': 'error',
-      'no-regex-spaces': 'error',
-      'no-self-assign': 'error',
+      "for-direction": "error",
+      "no-async-promise-executor": "error",
+      "no-case-declarations": "error",
+      "no-class-assign": "error",
+      "no-compare-neg-zero": "error",
+      "no-cond-assign": "error",
+      "no-constant-binary-expression": "error",
+      "no-constant-condition": "error",
+      "no-control-regex": "error",
+      "no-debugger": "error",
+      "no-delete-var": "error",
+      "no-dupe-else-if": "error",
+      "no-duplicate-case": "error",
+      "no-empty-character-class": "error",
+      "no-empty-pattern": "error",
+      "no-empty-static-block": "error",
+      "no-ex-assign": "error",
+      "no-extra-boolean-cast": "error",
+      "no-fallthrough": "error",
+      "no-global-assign": "error",
+      "no-invalid-regexp": "error",
+      "no-irregular-whitespace": "error",
+      "no-loss-of-precision": "error",
+      "no-misleading-character-class": "error",
+      "no-nonoctal-decimal-escape": "error",
+      "no-octal": "error",
+      "no-regex-spaces": "error",
+      "no-self-assign": "error",
       /** Warn about variable with identical names in the outer scope */
-      'no-shadow': 'warn',
-      'no-shadow-restricted-names': 'error',
-      'no-sparse-arrays': 'error',
+      "no-shadow": "warn",
+      "no-shadow-restricted-names": "error",
+      "no-sparse-arrays": "error",
       /** Allow the use of undeclared variables */
-      'no-undef': 'off',
-      'no-unsafe-finally': 'error',
-      'no-unsafe-optional-chaining': 'error',
-      'no-unused-labels': 'error',
-      'no-unused-private-class-members': 'error',
-      'no-useless-backreference': 'error',
-      'no-useless-catch': 'error',
-      'no-useless-escape': 'error',
+      "no-undef": "off",
+      "no-unsafe-finally": "error",
+      "no-unsafe-optional-chaining": "error",
+      "no-unused-labels": "error",
+      "no-unused-private-class-members": "error",
+      "no-useless-backreference": "error",
+      "no-useless-catch": "error",
+      "no-useless-escape": "error",
       /** Prefer let and const */
-      'no-var': 'error',
-      'no-with': 'error',
+      "no-var": "error",
+      "no-with": "error",
       /** Prefer const if never re-assigned */
-      'prefer-const': 'error',
-      'require-yield': 'error',
+      "prefer-const": "error",
+      "require-yield": "error",
       /** Enforce comparing typeof against valid strings */
-      'valid-typeof': 'error',
+      "valid-typeof": "error",
 
       // TypeScript Rules
       /** Prefer Array<T> format */
-      '@typescript-eslint/array-type': [
-        'error',
-        { default: 'generic', readonly: 'generic' },
+      "@typescript-eslint/array-type": [
+        "error",
+        { default: "generic", readonly: "generic" },
       ],
       /** Prevent @ts-ignore, allow @ts-expect-error */
-      '@typescript-eslint/ban-ts-comment': [
-        'error',
+      "@typescript-eslint/ban-ts-comment": [
+        "error",
         {
-          'ts-expect-error': false,
-          'ts-ignore': 'allow-with-description',
+          "ts-expect-error": false,
+          "ts-ignore": "allow-with-description",
         },
       ],
       /** Enforce import type { T } */
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        { prefer: 'type-imports' },
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports" },
       ],
       /** Shorthand method style is less strict */
-      '@typescript-eslint/method-signature-style': ['error', 'property'],
+      "@typescript-eslint/method-signature-style": ["error", "property"],
       /** Enforces generic type convention. */
-      '@typescript-eslint/naming-convention': [
-        'error',
+      "@typescript-eslint/naming-convention": [
+        "error",
         {
-          selector: 'typeParameter',
-          format: ['PascalCase'],
-          leadingUnderscore: 'forbid',
-          trailingUnderscore: 'forbid',
+          selector: "typeParameter",
+          format: ["PascalCase"],
+          leadingUnderscore: "forbid",
+          trailingUnderscore: "forbid",
           custom: {
-            regex: '^(T|T[A-Z][A-Za-z]+)$',
+            regex: "^(T|T[A-Z][A-Za-z]+)$",
             match: true,
           },
         },
       ],
       /** Duplicate values can lead to bugs that are hard to track down */
-      '@typescript-eslint/no-duplicate-enum-values': 'error',
+      "@typescript-eslint/no-duplicate-enum-values": "error",
       /** Using the operator any more than once does nothing */
-      '@typescript-eslint/no-extra-non-null-assertion': 'error',
+      "@typescript-eslint/no-extra-non-null-assertion": "error",
       /** There are several potential bugs with this compared to other loops */
-      '@typescript-eslint/no-for-in-array': 'error',
+      "@typescript-eslint/no-for-in-array": "error",
       /** Enforce valid definition of new and constructor */
-      '@typescript-eslint/no-misused-new': 'error',
+      "@typescript-eslint/no-misused-new": "error",
       /** Disallow TypeScript namespaces */
-      '@typescript-eslint/no-namespace': 'error',
+      "@typescript-eslint/no-namespace": "error",
       /** Disallow non-null assertions after an optional chain expression */
-      '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+      "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
       /** Allow the use of undeclared variables */
-      '@typescript-eslint/no-undef': 'off',
+      "@typescript-eslint/no-undef": "off",
       /** Detects conditionals which will always evaluate truthy or falsy */
-      '@typescript-eslint/no-unnecessary-condition': 'error',
+      "@typescript-eslint/no-unnecessary-condition": "error",
       /** Checks if the the explicit type is identical to the inferred type */
-      '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+      "@typescript-eslint/no-unnecessary-type-assertion": "error",
       /** Disallow using the unsafe built-in Function type */
-      '@typescript-eslint/no-unsafe-function-type': 'error',
+      "@typescript-eslint/no-unsafe-function-type": "error",
       /** Allow unused variables if appended by an underscore (_) */
-      '@typescript-eslint/no-unused-vars': [
-        'error',
+      "@typescript-eslint/no-unused-vars": [
+        "error",
         {
-          caughtErrorsIgnorePattern: '^_',
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: "^_",
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
         },
       ],
       /** Disallow using confusing built-in primitive class wrappers */
-      '@typescript-eslint/no-wrapper-object-types': 'error',
+      "@typescript-eslint/no-wrapper-object-types": "error",
       /** Enforce the use of as const over literal type */
-      '@typescript-eslint/prefer-as-const': 'error',
+      "@typescript-eslint/prefer-as-const": "error",
       /** Warn about async functions which have no await expression */
-      '@typescript-eslint/require-await': 'warn',
+      "@typescript-eslint/require-await": "warn",
       /** Prefer of ES6-style import declarations */
-      '@typescript-eslint/triple-slash-reference': 'error',
+      "@typescript-eslint/triple-slash-reference": "error",
     },
   },
 
   {
-    name: 'package-json',
-    files: ['package.json', '**/package.json'],
+    name: "package-json",
+    files: ["package.json", "**/package.json"],
     languageOptions: {
       parser: jsoncParser,
     },
@@ -186,15 +181,15 @@ const baseConfig = [
       pnpm: pnpmPlugin,
     },
     rules: {
-      'pnpm/json-enforce-catalog': 'error',
-      'pnpm/json-valid-catalog': 'error',
-      'pnpm/json-prefer-workspace-settings': 'error',
+      "pnpm/json-enforce-catalog": "error",
+      "pnpm/json-valid-catalog": "error",
+      "pnpm/json-prefer-workspace-settings": "error",
     },
   },
 
   {
-    name: 'pnpm-workspace',
-    files: ['pnpm-workspace.yaml'],
+    name: "pnpm-workspace",
+    files: ["pnpm-workspace.yaml"],
     languageOptions: {
       parser: yamlParser,
     },
@@ -202,11 +197,11 @@ const baseConfig = [
       pnpm: pnpmPlugin,
     },
     rules: {
-      'pnpm/yaml-no-unused-catalog-item': 'error',
-      'pnpm/yaml-no-duplicate-catalog-item': 'error',
+      "pnpm/yaml-no-unused-catalog-item": "error",
+      "pnpm/yaml-no-duplicate-catalog-item": "error",
     },
   },
-]
+];
 
 const config = [
   ...baseConfig,
@@ -222,24 +217,24 @@ const config = [
   },
   {
     plugins: {
-      'react-hooks': pluginReactHooks,
+      "react-hooks": pluginReactHooks,
     },
-    settings: { react: { version: 'detect' } },
+    settings: { react: { version: "detect" } },
     rules: {
       ...pluginReactHooks.configs.recommended.rules,
       // React scope no longer necessary with new JSX transform.
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
     },
   },
   {
     plugins: {
-      'jsx-a11y': jsxA11y,
+      "jsx-a11y": jsxA11y,
     },
     rules: {
       ...jsxA11y.configs.recommended.rules,
     },
   },
-]
+];
 
-export default config
+export default config;

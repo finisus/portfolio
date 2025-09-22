@@ -1,12 +1,9 @@
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import "./globals.css";
 import reportWebVitals from "./reportWebVitals.ts";
-// Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
-// Create a new router instance
 const router = createRouter({
   routeTree,
   context: {},
@@ -23,7 +20,6 @@ declare module "@tanstack/react-router" {
   }
 }
 
-// Render the app
 const rootElement = document.getElementById("app");
 if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);

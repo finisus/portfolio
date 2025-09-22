@@ -1,17 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="theme-color" content="#000000" />
+    <link rel="preload" href="/src/globals.css" as="style" />
+    <link rel="stylesheet" href="/src/globals.css" />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("theme-store");
+          const theme = stored ? JSON.parse(stored).state.theme : "system";
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const resolved =
+            theme === "system" ? (systemDark ? "dark" : "light") : theme;
+          document.documentElement.setAttribute("data-theme", resolved);
+          document.documentElement.style.colorScheme = resolved;
+        } catch (_err) {
+          // Fallback to system preference
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const fallback = systemDark ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", fallback);
+          document.documentElement.style.colorScheme = fallback;
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#090E13" />
+    <meta name="description" content="Aping | Building" />
+    <meta name="author" content="Finisus" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Finisus" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta
-      name="description"
-      content="Web site created using create-tsrouter-app"
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
     />
-    <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Create TanStack App - .</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <style>
+      :root {
+        --font-ibm-plex-sans: "IBM Plex Sans", ui-sans-serif, sans-serif;
+        --font-instrument-serif: "Instrument Serif", ui-serif, serif;
+        --font-ibm-plex-mono: "IBM Plex Mono", ui-monospace, monospace;
+      }
+    </style>
+    <title>Finisus' Works</title>
   </head>
   <body>
     <div id="app"></div>
