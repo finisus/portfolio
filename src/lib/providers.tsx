@@ -1,3 +1,4 @@
+import { useScreenStore } from "@/stores/screen-store";
 import {
   applyTheme,
   calcResolvedTheme,
@@ -53,5 +54,25 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default function Providers({ children }: { children: React.ReactNode }) {
+  const { setScreenX, setScrollY } = useScreenStore();
+
+  useEffect(() => {
+    const handleScreen = () => {
+      setScreenX(window.innerWidth);
+    };
+    window.addEventListener("resize", handleScreen, { passive: true });
+    handleScreen();
+    return () => window.removeEventListener("scroll", handleScreen);
+  }, [setScreenX]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [setScrollY]);
+
   return <ThemeProvider>{children}</ThemeProvider>;
 }

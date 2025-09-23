@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/lib/providers";
 import {
@@ -92,6 +93,7 @@ export const Route = createRootRoute({
     <Providers>
       <Header />
       <Outlet />
+      <Footer />
       <ThemedToaster />
       <TanstackDevtools
         config={{
