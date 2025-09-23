@@ -1,39 +1,85 @@
-import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router";
+import { toast } from "sonner";
 
-export const Route = createFileRoute('/')({
-  component: App,
-})
+export const Route = createFileRoute("/")({
+  component: IndexPage,
+});
 
-function App() {
+function IndexPage() {
   return (
-    <div className="text-center">
-      <header className="min-h-screen flex flex-col items-center justify-center bg-[#282c34] text-white text-[calc(10px+2vmin)]">
-        <img
-          src={logo}
-          className="h-[40vmin] pointer-events-none animate-[spin_20s_linear_infinite]"
-          alt="logo"
-        />
+    <div className="flex flex-col items-stretch justify-start pt-16 pb-16">
+      <section className="mx-4 space-y-4 space-x-4 rounded-md border border-border p-2">
         <p>
           Edit <code>src/routes/index.tsx</code> and save to reload.
         </p>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <Button
+          onPress={() => toast.info("Normal button pressed.")}
+          variant="default"
+          size="sm"
         >
-          Learn React
-        </a>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          Default
+        </Button>
+
+        <Button
+          onPress={() => toast.error("Destructive button pressed.")}
+          variant="destructive"
+          size="sm"
         >
-          Learn TanStack
-        </a>
-      </header>
+          Destructive
+        </Button>
+
+        <Button
+          onPress={() => toast.success("Success button pressed.")}
+          variant="secondary"
+          size="sm"
+        >
+          Secondary
+        </Button>
+
+        <Button
+          onPress={() => toast.success("Success button pressed.")}
+          variant="outline"
+          size="xs"
+        >
+          Outline
+        </Button>
+
+        <Button
+          onPress={() => toast.success("Success button pressed.")}
+          variant="outline"
+          size="sm"
+        >
+          Outline
+        </Button>
+
+        <Button
+          onPress={() => toast.success("Success button pressed.")}
+          variant="outline"
+          size="default"
+        >
+          Outline
+        </Button>
+
+        <Button
+          onPress={() => toast.success("Success button pressed.")}
+          variant="outline"
+          size="lg"
+        >
+          Outline
+        </Button>
+
+        <Button variant="ghost" size="sm">
+          Ghost
+        </Button>
+
+        <Button variant="link" size="sm">
+          Link
+        </Button>
+
+        <div className="h-[4000px]"></div>
+      </section>
     </div>
-  )
+  );
 }
