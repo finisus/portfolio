@@ -3,9 +3,9 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 import { useScreenStore } from "@/stores/screen-store";
 import { useThemeStore } from "@/stores/theme-store";
 import {
+  CaretDoubleUpIcon,
   CodeIcon,
   EnvelopeIcon,
-  HouseIcon,
   UserIcon,
 } from "@phosphor-icons/react";
 import { Link, useRouter } from "@tanstack/react-router";
@@ -35,17 +35,17 @@ const Navbar = () => {
           </Button>
         </Link>
 
-        <Link to="/" hash="contact">
-          <Button variant="ghost" size="xs" className="gap-2">
-            <EnvelopeIcon size={12} weight="bold" />
-            Contact
-          </Button>
-        </Link>
-
         <Link to="/" hash="works">
           <Button variant="ghost" size="xs" className="gap-2">
             <CodeIcon size={12} weight="bold" />
             Works
+          </Button>
+        </Link>
+
+        <Link to="/" hash="contact">
+          <Button variant="ghost" size="xs" className="gap-2">
+            <EnvelopeIcon size={12} weight="bold" />
+            Contact
           </Button>
         </Link>
       </div>
@@ -61,13 +61,7 @@ const Navbar = () => {
 };
 
 const FilledNavbar = () => {
-  const {
-    screenX,
-    showFilledNavbar,
-    isAboutSectInView,
-    isContactSectInView,
-    isWorksSectInView,
-  } = useScreenStore();
+  const { screenX, showFilledNavbar } = useScreenStore();
   const { theme, setTheme } = useThemeStore();
   const router = useRouter();
 
@@ -76,6 +70,7 @@ const FilledNavbar = () => {
       to: router.state.location.pathname,
       replace: true,
     });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -98,50 +93,26 @@ const FilledNavbar = () => {
             size="icon_sm"
             className="shadow-xs"
           >
-            <HouseIcon size={14} weight="bold" />
+            <CaretDoubleUpIcon size={14} weight="bold" />
           </Button>
 
-          {isAboutSectInView ? (
-            <Link to="/" hash="about">
-              <Button variant="default" size="icon_sm" className="shadow-xs">
-                <UserIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="about">
-              <Button variant="outline" size="icon_sm" className="shadow-xs">
-                <UserIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="about">
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <UserIcon size={14} weight="bold" />
+            </Button>
+          </Link>
 
-          {isContactSectInView ? (
-            <Link to="/" hash="contact">
-              <Button variant="default" size="icon_sm" className="shadow-xs">
-                <EnvelopeIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="contact">
-              <Button variant="outline" size="icon_sm" className="shadow-xs">
-                <EnvelopeIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="works">
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <CodeIcon size={14} weight="bold" />
+            </Button>
+          </Link>
 
-          {isWorksSectInView ? (
-            <Link to="/" hash="works">
-              <Button variant="default" size="icon_sm" className="shadow-xs">
-                <CodeIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="works">
-              <Button variant="outline" size="icon_sm" className="shadow-xs">
-                <CodeIcon size={14} weight="bold" />
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="contact">
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <EnvelopeIcon size={14} weight="bold" />
+            </Button>
+          </Link>
         </div>
       ) : (
         <div className="flex items-center gap-4">
@@ -151,57 +122,29 @@ const FilledNavbar = () => {
             size="sm"
             className="gap-2 shadow-xs"
           >
-            <HouseIcon size={13} weight="bold" />
-            Home
+            <CaretDoubleUpIcon size={13} weight="bold" />
           </Button>
 
-          {isAboutSectInView ? (
-            <Link to="/" hash="about">
-              <Button variant="default" size="sm" className="gap-2 shadow-xs">
-                <UserIcon size={13} weight="bold" />
-                About
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="about">
-              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-                <UserIcon size={13} weight="bold" />
-                About
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="about">
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <UserIcon size={13} weight="bold" />
+              About
+            </Button>
+          </Link>
 
-          {isContactSectInView ? (
-            <Link to="/" hash="contact">
-              <Button variant="default" size="sm" className="gap-2 shadow-xs">
-                <EnvelopeIcon size={13} weight="bold" />
-                Contact
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="contact">
-              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-                <EnvelopeIcon size={13} weight="bold" />
-                Contact
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="works">
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <CodeIcon size={13} weight="bold" />
+              Works
+            </Button>
+          </Link>
 
-          {isWorksSectInView ? (
-            <Link to="/" hash="works">
-              <Button variant="default" size="sm" className="gap-2 shadow-xs">
-                <CodeIcon size={13} weight="bold" />
-                Works
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/" hash="works">
-              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-                <CodeIcon size={13} weight="bold" />
-                Works
-              </Button>
-            </Link>
-          )}
+          <Link to="/" hash="contact">
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <EnvelopeIcon size={13} weight="bold" />
+              Contact
+            </Button>
+          </Link>
         </div>
       )}
 

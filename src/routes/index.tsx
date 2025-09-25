@@ -1,5 +1,7 @@
 import AsciiArt from "@/components/ascii-art";
+import NubcatFourAscii from "@/components/nubcat-four-ascii";
 import { Button } from "@/components/ui/button";
+import Works from "@/components/works";
 import { useScreenStore } from "@/stores/screen-store";
 import {
   GithubLogoIcon,
@@ -21,33 +23,33 @@ function IndexPage() {
     setIsWorksSectInView,
     setIsColophonSectInView,
   } = useScreenStore();
-  const aboutSectRef = useRef<HTMLElement>(null);
-  const contactSectRef = useRef<HTMLElement>(null);
-  const worksSectRef = useRef<HTMLElement>(null);
+  const aboutSectRef = useRef<HTMLDivElement>(null);
+  const worksSectRef = useRef<HTMLDivElement>(null);
+  const contactSectRef = useRef<HTMLDivElement>(null);
   const colophonSectRef = useRef<HTMLElement>(null);
   const isAboutSectInView = useInView(aboutSectRef);
-  const isContactSectInView = useInView(contactSectRef);
   const isWorksSectInView = useInView(worksSectRef);
+  const isContactSectInView = useInView(contactSectRef);
   const isColophonSectInView = useInView(colophonSectRef);
 
   useEffect(() => {
     setIsAboutSectInView(isAboutSectInView);
-    setIsContactSectInView(isContactSectInView);
     setIsWorksSectInView(isWorksSectInView);
+    setIsContactSectInView(isContactSectInView);
     setIsColophonSectInView(isColophonSectInView);
   }, [
     isAboutSectInView,
-    isContactSectInView,
     isWorksSectInView,
+    isContactSectInView,
     isColophonSectInView,
     setIsAboutSectInView,
-    setIsContactSectInView,
     setIsWorksSectInView,
+    setIsContactSectInView,
     setIsColophonSectInView,
   ]);
 
   return (
-    <div className="flex flex-col items-stretch gap-[10svh]">
+    <div className="flex flex-col items-stretch gap-[0svh]">
       <motion.section
         id="hero"
         aria-label="Hero Section"
@@ -80,32 +82,34 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="h-svh space-y-2 overflow-hidden px-4 pt-16 pb-33"
+        className="space-y-4 overflow-hidden px-4 pt-16"
       >
-        <h2 className="font-serif text-6xl max-md:text-5xl">
-          Who&apos;s Finisus?
+        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
+          Who&apos;s <span className="italic">Finisus?</span>
         </h2>
 
-        <div className="flex h-full items-center justify-center rounded-lg border border-border/35 bg-card/50 shadow-md backdrop-blur-[3px]"></div>
-      </motion.section>
+        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+          <span className="font-serif text-2xl font-medium max-md:text-xl">
+            <span className="italic">Finisus</span> refers to the other half of
+            my split personality.
+            <br />
+            <br />I try my best to uphold the four tenets of&nbsp;
+            <span className="italic">Finisus,</span>
+            <br />
+            &nbsp;1. Always be aping.
+            <br />
+            2. Always be building.
+            <br />
+            3. Maximize shareholder value.
+            <br />
+            4. Never disclose.
+            <br />
+          </span>
 
-      <motion.section
-        id="contact"
-        aria-label="Contact Section"
-        ref={contactSectRef}
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isContactSectInView ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.9,
-          ease: "easeInOut",
-        }}
-        className="h-svh space-y-2 overflow-hidden px-4 pt-16 pb-33"
-      >
-        <h2 className="font-serif text-6xl max-md:text-5xl">Contact Finisus</h2>
-
-        <div className="flex h-full items-center justify-center rounded-lg border border-border/35 bg-card/50 shadow-md backdrop-blur-[3px]"></div>
+          <div className="mx-auto py-4 opacity-75">
+            <NubcatFourAscii />
+          </div>
+        </div>
       </motion.section>
 
       <motion.section
@@ -120,32 +124,45 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="h-svh space-y-2 overflow-hidden px-4 pt-16 pb-33"
+        className="relative space-y-4 overflow-hidden px-4 pt-16"
       >
-        <h2 className="font-serif text-6xl max-md:text-5xl">Previous Works</h2>
+        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
+          Previous Works
+        </h2>
 
-        <div className="flex h-full items-center justify-center rounded-lg border border-border/35 bg-card/50 shadow-md backdrop-blur-[3px]"></div>
+        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+          <Works />
+        </div>
       </motion.section>
 
       <motion.section
-        id="colophon"
-        aria-label="Colophon"
-        ref={colophonSectRef}
+        id="contact"
+        aria-label="Contact Section"
+        ref={contactSectRef}
         initial={{ opacity: 0 }}
         animate={{
-          opacity: isColophonSectInView ? 1 : 0,
+          opacity: isContactSectInView ? 1 : 0,
         }}
         transition={{
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="flex flex-col gap-4 overflow-hidden px-4 pt-16 pb-4"
+        className="relative space-y-4 overflow-hidden px-4 pt-16"
       >
-        <div className="flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
-          <p className="font-serif text-xl font-medium text-muted-foreground max-md:text-lg">
-            ::Colophon::
-          </p>
+        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
+          Wanna work together?
+        </h2>
 
+        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]"></div>
+      </motion.section>
+
+      <section
+        id="colophon"
+        aria-label="Colophon"
+        ref={colophonSectRef}
+        className="relative flex flex-col gap-4 overflow-hidden px-4 pt-16 pb-4"
+      >
+        <div className="z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
           <div className="flex flex-col items-center justify-center gap-1">
             <h1 className="font-serif text-4xl font-medium text-primary max-md:text-3xl">
               Get in touch
@@ -181,15 +198,24 @@ function IndexPage() {
             </div>
           </div>
 
+          <p className="font-serif text-xl font-medium text-muted-foreground max-md:text-lg">
+            ::Colophon::
+          </p>
+
           <p className="text-center font-serif text-xl font-medium max-md:text-lg">
             With love by Finisus 💛
           </p>
         </div>
 
-        <span className="ml-auto font-mono text-xs text-muted-foreground">
+        <span className="z-10 ml-auto font-mono text-xs text-muted-foreground">
           ©Sep ’25
         </span>
-      </motion.section>
+
+        <div
+          aria-hidden
+          className="absolute top-1/2 left-1/2 z-0 h-1/12 w-4/5 -translate-x-1/2 -translate-y-1/2 bg-primary blur-3xl"
+        />
+      </section>
     </div>
   );
 }
