@@ -124,13 +124,19 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="relative space-y-4 overflow-hidden px-4 pt-16"
+        className="space-y-4 overflow-hidden px-4 pt-16"
       >
         <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
           Previous Works
         </h2>
 
-        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+        <div className="flex h-full flex-col items-start justify-start gap-6 overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+          <span className="font-serif text-2xl font-medium max-md:text-xl">
+            Here are some of my works,
+            <br />
+            click on preview&apos;s image to open it in a new tab.
+          </span>
+
           <Works />
         </div>
       </motion.section>
