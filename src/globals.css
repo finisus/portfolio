@@ -157,6 +157,31 @@ html[data-theme="dark"] {
   color: #f2f2f2;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
 body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   overflow-x: hidden;
@@ -174,7 +199,7 @@ body {
 
 @layer base {
   :root {
-    --radius: 0.4rem;
+    --radius: 0.6rem;
 
     --background: hsl(0 0% 95%);
     --foreground: hsl(210 36% 5%);
@@ -183,7 +208,7 @@ body {
     --popover: hsl(0 0% 85%);
     --popover-foreground: hsl(210 36% 5%);
     --primary: hsl(39 66% 56%);
-    --primary-foreground: hsl(0 0% 95%);
+    --primary-foreground: hsl(210 36% 5%);
     --secondary: hsl(0 0% 85%);
     --secondary-foreground: hsl(39 66% 56%);
     --muted: hsl(0 0% 85%);
@@ -238,7 +263,7 @@ body {
     --popover: hsl(227 14% 13%);
     --popover-foreground: hsl(0 0% 95%);
     --primary: hsl(39 66% 71%);
-    --primary-foreground: hsl(210 36% 5%);
+    --primary-foreground: hsl(0 0% 95%);
     --secondary: hsl(227 14% 13%);
     --secondary-foreground: hsl(39 66% 71%);
     --muted: hsl(227 14% 13%);

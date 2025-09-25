@@ -5,6 +5,7 @@ import {
   getSystemTheme,
   useThemeStore,
 } from "@/stores/theme-store";
+import { ReactLenis } from "lenis/react";
 import { useEffect } from "react";
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -54,25 +55,32 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const { setScreenX, setScrollY } = useScreenStore();
+  const { setScreenX, setScreenY, setScrollY } = useScreenStore();
 
   useEffect(() => {
     const handleScreen = () => {
       setScreenX(window.innerWidth);
+      setScreenY(window.innerHeight);
     };
     window.addEventListener("resize", handleScreen, { passive: true });
     handleScreen();
-    return () => window.removeEventListener("scroll", handleScreen);
-  }, [setScreenX]);
+    return () => window.removeEventListener("resize", handleScreen);
+  }, [setScreenX, setScreenY]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setScrollY]);
 
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <>
+      <ReactLenis root options={{ smoothWheel: true }} />
+      <ThemeProvider>{children}</ThemeProvider>
+    </>
+  );
 }

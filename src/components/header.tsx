@@ -2,8 +2,13 @@ import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import { useScreenStore } from "@/stores/screen-store";
 import { useThemeStore } from "@/stores/theme-store";
-import { CodeIcon, EnvelopeIcon, UserIcon } from "@phosphor-icons/react";
-import { Link } from "@tanstack/react-router";
+import {
+  CodeIcon,
+  EnvelopeIcon,
+  HouseIcon,
+  UserIcon,
+} from "@phosphor-icons/react";
+import { Link, useRouter } from "@tanstack/react-router";
 import { motion } from "motion/react";
 
 const Navbar = () => {
@@ -56,8 +61,22 @@ const Navbar = () => {
 };
 
 const FilledNavbar = () => {
-  const { screenX, showFilledNavbar } = useScreenStore();
+  const {
+    screenX,
+    showFilledNavbar,
+    isAboutSectInView,
+    isContactSectInView,
+    isWorksSectInView,
+  } = useScreenStore();
   const { theme, setTheme } = useThemeStore();
+  const router = useRouter();
+
+  const scrollToTop = () => {
+    router.navigate({
+      to: router.state.location.pathname,
+      replace: true,
+    });
+  };
 
   return (
     <motion.nav
@@ -73,46 +92,116 @@ const FilledNavbar = () => {
     >
       {screenX < 768 ? (
         <div className="flex items-center gap-4">
-          <Link to="/" hash="about">
-            <Button variant="outline" size="icon_sm">
-              <UserIcon size={14} weight="bold" />
-            </Button>
-          </Link>
+          <Button
+            onPress={scrollToTop}
+            variant="outline"
+            size="icon_sm"
+            className="shadow-xs"
+          >
+            <HouseIcon size={14} weight="bold" />
+          </Button>
 
-          <Link to="/" hash="contact">
-            <Button variant="outline" size="icon_sm">
-              <EnvelopeIcon size={14} weight="bold" />
-            </Button>
-          </Link>
+          {isAboutSectInView ? (
+            <Link to="/" hash="about">
+              <Button variant="default" size="icon_sm" className="shadow-xs">
+                <UserIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="about">
+              <Button variant="outline" size="icon_sm" className="shadow-xs">
+                <UserIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          )}
 
-          <Link to="/" hash="works">
-            <Button variant="outline" size="icon_sm">
-              <CodeIcon size={14} weight="bold" />
-            </Button>
-          </Link>
+          {isContactSectInView ? (
+            <Link to="/" hash="contact">
+              <Button variant="default" size="icon_sm" className="shadow-xs">
+                <EnvelopeIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="contact">
+              <Button variant="outline" size="icon_sm" className="shadow-xs">
+                <EnvelopeIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          )}
+
+          {isWorksSectInView ? (
+            <Link to="/" hash="works">
+              <Button variant="default" size="icon_sm" className="shadow-xs">
+                <CodeIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="works">
+              <Button variant="outline" size="icon_sm" className="shadow-xs">
+                <CodeIcon size={14} weight="bold" />
+              </Button>
+            </Link>
+          )}
         </div>
       ) : (
         <div className="flex items-center gap-4">
-          <Link to="/" hash="about">
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <UserIcon size={14} weight="bold" />
-              About
-            </Button>
-          </Link>
+          <Button
+            onPress={scrollToTop}
+            variant="outline"
+            size="sm"
+            className="gap-2 shadow-xs"
+          >
+            <HouseIcon size={13} weight="bold" />
+            Home
+          </Button>
 
-          <Link to="/" hash="contact">
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <EnvelopeIcon size={14} weight="bold" />
-              Contact
-            </Button>
-          </Link>
+          {isAboutSectInView ? (
+            <Link to="/" hash="about">
+              <Button variant="default" size="sm" className="gap-2 shadow-xs">
+                <UserIcon size={13} weight="bold" />
+                About
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="about">
+              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+                <UserIcon size={13} weight="bold" />
+                About
+              </Button>
+            </Link>
+          )}
 
-          <Link to="/" hash="works">
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <CodeIcon size={14} weight="bold" />
-              Works
-            </Button>
-          </Link>
+          {isContactSectInView ? (
+            <Link to="/" hash="contact">
+              <Button variant="default" size="sm" className="gap-2 shadow-xs">
+                <EnvelopeIcon size={13} weight="bold" />
+                Contact
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="contact">
+              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+                <EnvelopeIcon size={13} weight="bold" />
+                Contact
+              </Button>
+            </Link>
+          )}
+
+          {isWorksSectInView ? (
+            <Link to="/" hash="works">
+              <Button variant="default" size="sm" className="gap-2 shadow-xs">
+                <CodeIcon size={13} weight="bold" />
+                Works
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/" hash="works">
+              <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+                <CodeIcon size={13} weight="bold" />
+                Works
+              </Button>
+            </Link>
+          )}
         </div>
       )}
 

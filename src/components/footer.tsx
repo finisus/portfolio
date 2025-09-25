@@ -32,7 +32,6 @@ const ExtLinks = () => {
             Github
           </Button>
         </a>
-
         <a
           href="https://x.com/finisuss"
           target="_blank"
@@ -42,7 +41,6 @@ const ExtLinks = () => {
             Twitter/X
           </Button>
         </a>
-
         <a
           href="https://telegram.me/finisus"
           target="_blank"
@@ -58,13 +56,15 @@ const ExtLinks = () => {
 };
 
 const FilledExtLinks = () => {
-  const { screenX, showFilledExtLinks } = useScreenStore();
+  const { screenX, showFilledExtLinks, isColophonSectInView } =
+    useScreenStore();
 
   return (
     <motion.nav
-      initial={{ y: 0 }}
+      initial={{ opacity: 1, y: 0 }}
       animate={{
-        y: showFilledExtLinks ? -64 : 0,
+        opacity: isColophonSectInView ? 0 : 1,
+        y: isColophonSectInView ? 0 : showFilledExtLinks ? -64 : 0,
       }}
       transition={{
         duration: 0.4,
@@ -83,7 +83,6 @@ const FilledExtLinks = () => {
               <GithubLogoIcon size={14} weight="bold" />
             </Button>
           </a>
-
           <a
             href="https://x.com/finisuss"
             target="_blank"
@@ -93,7 +92,6 @@ const FilledExtLinks = () => {
               <XLogoIcon size={14} weight="bold" />
             </Button>
           </a>
-
           <a
             href="https://telegram.me/finisus"
             target="_blank"
@@ -111,30 +109,28 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <GithubLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2">
+              <GithubLogoIcon size={13} weight="bold" />
               Github
             </Button>
           </a>
-
           <a
             href="https://x.com/finisuss"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <XLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2">
+              <XLogoIcon size={13} weight="bold" />
               Twitter/X
             </Button>
           </a>
-
           <a
             href="https://telegram.me/finisus"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="w-26 gap-2">
-              <TelegramLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2">
+              <TelegramLogoIcon size={13} weight="bold" />
               Telegram
             </Button>
           </a>

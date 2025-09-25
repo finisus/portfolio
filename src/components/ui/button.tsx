@@ -20,16 +20,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border border-primary bg-primary/90 text-primary-foreground data-[hovered]:bg-primary data-[pressed]:bg-primary/80 backdrop-blur-[3px]",
+          "border border-primary/70 bg-primary/50 text-primary-foreground data-[hovered]:bg-primary/70 data-[pressed]:bg-primary/60 backdrop-blur-[3px]",
         destructive:
-          "border border-destructive bg-destructive/80 text-foreground data-[hovered]:bg-destructive data-[pressed]:bg-destructive/70 backdrop-blur-[3px]",
+          "border border-destructive/70 bg-destructive/50 text-foreground data-[hovered]:bg-destructive/70 data-[pressed]:bg-destructive/60 backdrop-blur-[3px]",
         outline:
-          "border border-input bg-card/80 data-[hovered]:bg-accent/90 data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/70 backdrop-blur-[3px]",
+          "border border-input/70 bg-card/50 data-[hovered]:bg-accent/70 data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/60 backdrop-blur-[3px]",
         secondary:
-          "border border-secondary-foreground/75 bg-secondary/75 text-secondary-foreground data-[hovered]:bg-secondary data-[pressed]:bg-secondary/50 backdrop-blur-[3px]",
+          "border border-secondary-foreground/70 bg-secondary/50 text-secondary-foreground data-[hovered]:bg-secondary/70 data-[pressed]:bg-secondary/60 backdrop-blur-[3px]",
         ghost:
-          "border border-transparent data-[hovered]:border-input data-[hovered]:bg-accent/90 data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/70 transition-all data-[hovered]:backdrop-blur-[3px] data-[pressed]:backdrop-blur-[3px]",
-        link: "text-primary underline-offset-4 data-[hovered]:underline data-[pressed]:text-primary/80",
+          "border border-transparent data-[hovered]:border-input data-[hovered]:bg-accent/70 data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/60 transition-all data-[hovered]:backdrop-blur-[3px] data-[pressed]:backdrop-blur-[3px]",
+        link: "text-foreground dark:text-primary underline-offset-4 data-[hovered]:underline data-[pressed]:text-primary/80",
       },
       size: {
         icon_xs: "size-7",

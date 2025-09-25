@@ -32,7 +32,7 @@ export default function ThemeToggle({
         />
         <span className="sr-only">Toggle theme</span>
       </Button>
-      <MenuPopover className="border-border p-0">
+      <MenuPopover className="border-border/70 p-0">
         <Menu className="p-1">
           <MenuItem
             onAction={() => setTheme("light")}
