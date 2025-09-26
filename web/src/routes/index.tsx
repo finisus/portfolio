@@ -1,8 +1,10 @@
 import AsciiArt from "@/components/ascii-art";
+import ContactForm from "@/components/contact-form";
 import NubcatFourAscii from "@/components/nubcat-four-ascii";
 import { Button } from "@/components/ui/button";
 import Works from "@/components/works";
 import { useScreenStore } from "@/stores/screen-store";
+import { useTimeStore } from "@/stores/time-store";
 import {
   GithubLogoIcon,
   TelegramLogoIcon,
@@ -17,6 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function IndexPage() {
+  const { currentTimeEST, currentTimeJST, currentTimeUTC } = useTimeStore();
   const {
     setIsAboutSectInView,
     setIsContactSectInView,
@@ -65,7 +68,7 @@ function IndexPage() {
           <AsciiArt />
         </div>
 
-        <h1 className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 font-serif text-8xl italic max-md:text-7xl">
+        <h1 className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 font-serif text-8xl italic max-md:text-7xl dark:text-primary">
           Finisus
         </h1>
       </motion.section>
@@ -82,27 +85,28 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="space-y-4 overflow-hidden px-4 pt-16"
+        className="container mx-auto space-y-3 overflow-hidden pt-16"
       >
-        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
+        <h2 className="px-4 font-serif text-5xl text-muted-foreground max-md:text-4xl">
           Who&apos;s <span className="italic">Finisus?</span>
         </h2>
 
-        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+        <div className="flex h-full flex-col items-start justify-start space-y-3 overflow-hidden px-4">
           <span className="font-serif text-2xl font-medium max-md:text-xl">
             <span className="italic">Finisus</span> refers to the other half of
             my split personality.
-            <br />
-            <br />I try my best to uphold the four tenets of&nbsp;
+          </span>
+          <span className="font-serif text-2xl font-medium max-md:text-xl">
+            I try my best to uphold the four tenets of&nbsp;
             <span className="italic">Finisus,</span>
             <br />
-            &nbsp;1. Always be aping.
+            &nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;Always be aping.
             <br />
-            2. Always be building.
+            &nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Always be building.
             <br />
-            3. Maximize shareholder value.
+            &nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Maximize shareholder value.
             <br />
-            4. Never disclose.
+            &nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;Never disclose.
             <br />
           </span>
 
@@ -124,20 +128,24 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="space-y-4 overflow-hidden px-4 pt-16"
+        className="space-y-6 overflow-hidden pt-16"
       >
-        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
-          Previous Works
-        </h2>
+        <div className="container mx-auto space-y-3 px-4">
+          <h2 className="font-serif text-5xl text-muted-foreground max-md:text-4xl">
+            Previous Works
+          </h2>
 
-        <div className="flex h-full flex-col items-start justify-start gap-6 overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
           <span className="font-serif text-2xl font-medium max-md:text-xl">
             Here are some of my works,
             <br />
             click on preview&apos;s image to open it in a new tab.
           </span>
+        </div>
 
-          <Works />
+        <div className="mx-auto px-4">
+          <div className="overflow-hidden rounded-lg border border-border/35 bg-card/50 p-4 shadow-md backdrop-blur-[3px]">
+            <Works />
+          </div>
         </div>
       </motion.section>
 
@@ -153,22 +161,47 @@ function IndexPage() {
           duration: 0.9,
           ease: "easeInOut",
         }}
-        className="relative space-y-4 overflow-hidden px-4 pt-16"
+        className="container mx-auto space-y-3 overflow-hidden pt-16"
       >
-        <h2 className="mx-2 font-serif text-5xl max-md:text-4xl">
+        <h2 className="px-4 font-serif text-5xl text-muted-foreground max-md:text-4xl">
           Wanna work together?
         </h2>
 
-        <div className="flex h-full flex-col items-start justify-start overflow-hidden rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]"></div>
+        <div className="flex h-full flex-col items-start justify-start space-y-3 overflow-hidden px-4">
+          <div className="flex w-fit flex-col items-start justify-start gap-1.5">
+            <span className="font-serif text-2xl font-medium max-md:text-xl">
+              If you live around these parts...
+            </span>
+
+            <div className="rounded-lg border border-border/35 bg-card/50 px-4 py-3 shadow-md backdrop-blur-[3px]">
+              <span className="flex gap-4 font-mono text-base font-medium text-primary max-md:ml-0 max-md:flex-col max-md:gap-1 max-md:text-sm">
+                <span>{currentTimeEST}</span>
+                <span>{currentTimeJST}</span>
+                <span>{currentTimeUTC}</span>
+              </span>
+            </div>
+
+            <span className="font-serif text-2xl font-medium max-md:text-xl">
+              ...expect a reply ASAP.
+              <br />
+              If not I&apos;m probably <s>gooning</s>
+              &nbsp;sleeping, please bear with me.
+            </span>
+          </div>
+        </div>
+
+        <div className="w-full px-4">
+          <ContactForm />
+        </div>
       </motion.section>
 
       <section
         id="colophon"
         aria-label="Colophon"
         ref={colophonSectRef}
-        className="relative flex flex-col gap-4 overflow-hidden px-4 pt-16 pb-4"
+        className="container mx-auto overflow-hidden px-4 pt-16"
       >
-        <div className="z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+        <div className="relative z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
           <div className="flex flex-col items-center justify-center gap-1">
             <h1 className="font-serif text-4xl font-medium text-primary max-md:text-3xl">
               Get in touch
@@ -211,17 +244,23 @@ function IndexPage() {
           <p className="text-center font-serif text-xl font-medium max-md:text-lg">
             With love by Finisus 💛
           </p>
+
+          <div
+            aria-hidden
+            className="absolute top-1/2 left-1/2 z-0 container h-2 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="absolute top-1/2 left-1/2 z-0 container h-4/5 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+          />
         </div>
-
-        <span className="z-10 ml-auto font-mono text-xs text-muted-foreground">
-          ©Sep ’25
-        </span>
-
-        <div
-          aria-hidden
-          className="absolute top-1/2 left-1/2 z-0 h-1/12 w-4/5 -translate-x-1/2 -translate-y-1/2 bg-primary blur-3xl"
-        />
       </section>
+
+      <div className="z-50 ml-auto overflow-hidden px-4 py-1">
+        <span className="font-mono text-xs font-medium text-muted-foreground/50">
+          ©Sep’25
+        </span>
+      </div>
     </div>
   );
 }

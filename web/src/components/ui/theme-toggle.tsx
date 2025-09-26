@@ -7,6 +7,8 @@ import { LaptopIcon, MoonIcon, SunIcon } from "@phosphor-icons/react";
 type ThemeToggleProps = {
   theme: Theme;
   size: "icon_xs" | "icon_sm";
+  weight: "bold" | "regular";
+  font: "font-mono" | "font-serif";
   variant: "ghost" | "outline";
   setTheme: (theme: Theme) => void;
 };
@@ -14,6 +16,8 @@ type ThemeToggleProps = {
 export default function ThemeToggle({
   theme,
   size,
+  weight,
+  font,
   variant,
   setTheme,
 }: ThemeToggleProps) {
@@ -22,27 +26,29 @@ export default function ThemeToggle({
       <Button aria-label="Theme Toggle" variant={variant} size={size}>
         <SunIcon
           size={14}
-          weight="bold"
+          weight={weight}
           className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
         />
         <MoonIcon
           size={14}
-          weight="bold"
+          weight={weight}
           className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
         />
         <span className="sr-only">Toggle theme</span>
       </Button>
-      <MenuPopover className="border-border/70 p-0">
+      <MenuPopover
+        className={`border-border/70 bg-card/70 p-0 backdrop-blur-xs ${font}`}
+      >
         <Menu className="p-1">
           <MenuItem
             onAction={() => setTheme("light")}
             className={cn(
               "gap-2",
               theme === "light" &&
-                "font-semibold text-accent-foreground underline",
+                "text-accent-foreground underline decoration-[1.5px]",
             )}
           >
-            <SunIcon size={14} weight="bold" />
+            <SunIcon size={14} weight={weight} />
             Light
           </MenuItem>
           <MenuItem
@@ -50,10 +56,10 @@ export default function ThemeToggle({
             className={cn(
               "gap-2",
               theme === "dark" &&
-                "font-semibold text-accent-foreground underline",
+                "text-accent-foreground underline decoration-[1.5px]",
             )}
           >
-            <MoonIcon size={14} weight="bold" />
+            <MoonIcon size={14} weight={weight} />
             Dark
           </MenuItem>
           <MenuItem
@@ -61,10 +67,10 @@ export default function ThemeToggle({
             className={cn(
               "gap-2",
               theme === "system" &&
-                "font-semibold text-accent-foreground underline",
+                "text-accent-foreground underline decoration-[1.5px]",
             )}
           >
-            <LaptopIcon size={14} weight="bold" />
+            <LaptopIcon size={14} weight={weight} />
             System
           </MenuItem>
         </Menu>

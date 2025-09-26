@@ -25,25 +25,25 @@ const Navbar = () => {
         duration: 0.3,
         ease: "easeInOut",
       }}
-      className="absolute flex w-full items-center justify-between gap-0.5 bg-card/50 px-2 py-1 backdrop-blur-[3px]"
+      className="absolute flex w-full items-center justify-between gap-0.5 bg-background/50 px-2 py-1 backdrop-blur-[3px]"
     >
       <div className="flex items-center gap-0">
         <Link to="/" hash="about">
-          <Button variant="ghost" size="xs" className="gap-2">
+          <Button variant="ghost" size="xs" className="gap-2 font-mono text-xs">
             <UserIcon size={12} weight="bold" />
             About
           </Button>
         </Link>
 
         <Link to="/" hash="works">
-          <Button variant="ghost" size="xs" className="gap-2">
+          <Button variant="ghost" size="xs" className="gap-2 font-mono text-xs">
             <CodeIcon size={12} weight="bold" />
             Works
           </Button>
         </Link>
 
         <Link to="/" hash="contact">
-          <Button variant="ghost" size="xs" className="gap-2">
+          <Button variant="ghost" size="xs" className="gap-2 font-mono text-xs">
             <EnvelopeIcon size={12} weight="bold" />
             Contact
           </Button>
@@ -53,6 +53,8 @@ const Navbar = () => {
       <ThemeToggle
         theme={theme}
         size="icon_xs"
+        weight="bold"
+        font="font-mono"
         variant="ghost"
         setTheme={setTheme}
       />
@@ -93,24 +95,24 @@ const FilledNavbar = () => {
             size="icon_sm"
             className="shadow-xs"
           >
-            <CaretDoubleUpIcon size={14} weight="bold" />
+            <CaretDoubleUpIcon size={14} weight="regular" />
           </Button>
 
           <Link to="/" hash="about">
             <Button variant="outline" size="icon_sm" className="shadow-xs">
-              <UserIcon size={14} weight="bold" />
+              <UserIcon size={14} weight="regular" />
             </Button>
           </Link>
 
           <Link to="/" hash="works">
             <Button variant="outline" size="icon_sm" className="shadow-xs">
-              <CodeIcon size={14} weight="bold" />
+              <CodeIcon size={14} weight="regular" />
             </Button>
           </Link>
 
           <Link to="/" hash="contact">
             <Button variant="outline" size="icon_sm" className="shadow-xs">
-              <EnvelopeIcon size={14} weight="bold" />
+              <EnvelopeIcon size={14} weight="regular" />
             </Button>
           </Link>
         </div>
@@ -122,26 +124,26 @@ const FilledNavbar = () => {
             size="sm"
             className="gap-2 shadow-xs"
           >
-            <CaretDoubleUpIcon size={13} weight="bold" />
+            <CaretDoubleUpIcon size={13} weight="regular" />
           </Button>
 
           <Link to="/" hash="about">
             <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-              <UserIcon size={13} weight="bold" />
+              <UserIcon size={13} weight="regular" />
               About
             </Button>
           </Link>
 
           <Link to="/" hash="works">
             <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-              <CodeIcon size={13} weight="bold" />
+              <CodeIcon size={13} weight="regular" />
               Works
             </Button>
           </Link>
 
           <Link to="/" hash="contact">
             <Button variant="outline" size="sm" className="gap-2 shadow-xs">
-              <EnvelopeIcon size={13} weight="bold" />
+              <EnvelopeIcon size={13} weight="regular" />
               Contact
             </Button>
           </Link>
@@ -151,6 +153,8 @@ const FilledNavbar = () => {
       <ThemeToggle
         theme={theme}
         size="icon_sm"
+        weight="regular"
+        font="font-serif"
         variant="outline"
         setTheme={setTheme}
       />

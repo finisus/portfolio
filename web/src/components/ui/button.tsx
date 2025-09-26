@@ -8,7 +8,7 @@ import {
 
 const buttonVariants = cva(
   [
-    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors cursor-pointer",
+    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium font-serif transition-colors cursor-pointer",
     /* Disabled */
     "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
     /* Focus Visible */
@@ -36,10 +36,10 @@ const buttonVariants = cva(
         icon_sm: "size-8",
         icon: "size-9",
         icon_lg: "size-10",
-        xs: "px-2 h-7 text-xs",
-        sm: "px-2.5 h-8 text-sm",
-        default: "px-3 h-9 text-sm",
-        lg: "px-3.5 h-10 text-base",
+        xs: "px-2 h-7 text-sm",
+        sm: "px-2.5 h-8 text-base",
+        default: "px-3 h-9 text-base",
+        lg: "px-3.5 h-10 text-lg",
       },
     },
     defaultVariants: {

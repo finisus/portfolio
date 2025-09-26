@@ -1,3 +1,4 @@
+import { useUpdateCurrentTime } from "@/hooks/use-current-time";
 import { useScreenStore } from "@/stores/screen-store";
 import {
   applyTheme,
@@ -56,6 +57,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const { setScreenX, setScreenY, setScrollY } = useScreenStore();
+  useUpdateCurrentTime();
 
   useEffect(() => {
     const handleScreen = () => {

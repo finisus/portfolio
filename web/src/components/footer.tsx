@@ -28,7 +28,7 @@ const ExtLinks = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="link" size="xs">
+          <Button variant="link" size="xs" className="font-mono text-xs">
             Github
           </Button>
         </a>
@@ -37,7 +37,7 @@ const ExtLinks = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="link" size="xs">
+          <Button variant="link" size="xs" className="font-mono text-xs">
             Twitter/X
           </Button>
         </a>
@@ -46,7 +46,7 @@ const ExtLinks = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="link" size="xs">
+          <Button variant="link" size="xs" className="font-mono text-xs">
             Telegram
           </Button>
         </a>
@@ -79,8 +79,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="icon_sm">
-              <GithubLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <GithubLogoIcon size={14} weight="regular" />
             </Button>
           </a>
           <a
@@ -88,8 +88,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="icon_sm">
-              <XLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <XLogoIcon size={14} weight="regular" />
             </Button>
           </a>
           <a
@@ -97,8 +97,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="icon_sm">
-              <TelegramLogoIcon size={14} weight="bold" />
+            <Button variant="outline" size="icon_sm" className="shadow-xs">
+              <TelegramLogoIcon size={14} weight="regular" />
             </Button>
           </a>
         </div>
@@ -109,8 +109,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="gap-2">
-              <GithubLogoIcon size={13} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <GithubLogoIcon size={13} weight="regular" />
               Github
             </Button>
           </a>
@@ -119,8 +119,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="gap-2">
-              <XLogoIcon size={13} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <XLogoIcon size={13} weight="regular" />
               Twitter/X
             </Button>
           </a>
@@ -129,8 +129,8 @@ const FilledExtLinks = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="outline" size="sm" className="gap-2">
-              <TelegramLogoIcon size={13} weight="bold" />
+            <Button variant="outline" size="sm" className="gap-2 shadow-xs">
+              <TelegramLogoIcon size={13} weight="regular" />
               Telegram
             </Button>
           </a>

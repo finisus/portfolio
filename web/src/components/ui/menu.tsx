@@ -102,7 +102,7 @@ const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
         /* Disabled */
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         /* Focused */
-        "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+        "data-[focused]:bg-accent/70 data-[focused]:text-accent-foreground",
         /* Selection Mode */
         "data-[selection-mode]:pl-8",
         cls,
@@ -150,7 +150,7 @@ const MenuHeader = ({
     className={cn(
       "px-3 py-1.5 text-sm font-semibold",
       inset && "pl-8",
-      separator && "-mx-1 mb-1 border-b border-b-border pb-2.5",
+      separator && "-mx-1 mb-1 border-b border-b-border/70 pb-2.5",
       className,
     )}
     {...props}
@@ -159,7 +159,7 @@ const MenuHeader = ({
 
 const MenuSeparator = ({ className, ...props }: AriaSeparatorProps) => (
   <AriaSeparator
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    className={cn("-mx-1 my-1 h-px bg-muted/70", className)}
     {...props}
   />
 );

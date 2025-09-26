@@ -1,0 +1,20 @@
+/** @type {import('prettier').Config} */
+export default {
+  plugins: ["@trivago/prettier-plugin-sort-imports"],
+  printWidth: 80,
+  tabWidth: 2,
+  trailingComma: "all",
+  singleQuote: false,
+  semi: true,
+  importOrder: [
+    "^(node:.*)$",
+    "^@core/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@server/(.*)$",
+    "^@ui/(.*)$",
+    "^[./]",
+  ],
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+  importOrderGroupNamespaceSpecifiers: true,
+};

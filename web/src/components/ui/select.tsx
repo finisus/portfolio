@@ -54,7 +54,7 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
   <AriaButton
     className={composeRenderProps(className, (cls) =>
       cn(
-        "flex h-9 w-full cursor-pointer items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-sm",
+        "flex h-9 w-full cursor-pointer items-center justify-between rounded-md border border-input/70 bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-sm",
         /* Disabled */
         "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         /* Focused */
