@@ -65,7 +65,7 @@ export default function ContactForm() {
   return (
     <Form
       onSubmit={handleSubmit(submit)}
-      className="mx-auto flex w-full max-w-5xl flex-col items-stretch justify-start gap-3 rounded-lg border border-border/35 bg-card/50 px-4 py-6 font-serif backdrop-blur-[3px]"
+      className="relative mx-auto flex w-full max-w-5xl flex-col items-stretch justify-start gap-3 rounded-lg border border-border/35 bg-card/50 px-4 py-6 font-serif backdrop-blur-[3px]"
     >
       <TextField
         name="name"
@@ -207,7 +207,7 @@ export default function ContactForm() {
       <div className="mx-auto pt-3">
         <Button
           type="submit"
-          variant="outline"
+          variant="default"
           size="sm"
           className="w-21 gap-2 shadow-xs"
           isDisabled={isSubmitting}
@@ -216,6 +216,11 @@ export default function ContactForm() {
           <span>{isSubmitting ? "..." : "Submit"}</span>
         </Button>
       </div>
+
+      {/* <div */}
+      {/*   aria-hidden */}
+      {/*   className="absolute bottom-34 left-1/2 z-0 container h-2 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary opacity-70 blur-3xl" */}
+      {/* /> */}
     </Form>
   );
 }

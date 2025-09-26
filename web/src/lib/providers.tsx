@@ -6,7 +6,7 @@ import {
   getSystemTheme,
   useThemeStore,
 } from "@/stores/theme-store";
-import { ReactLenis } from "lenis/react";
+// import { ReactLenis } from "lenis/react";
 import { useEffect } from "react";
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -81,7 +81,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <ReactLenis root options={{ smoothWheel: true }} />
+      {/* <ReactLenis root options={{ smoothWheel: true }} /> */}
       <ThemeProvider>{children}</ThemeProvider>
     </>
   );

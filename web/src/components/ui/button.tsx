@@ -20,7 +20,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border border-primary/70 bg-primary/50 text-primary-foreground data-[hovered]:bg-primary/70 data-[pressed]:bg-primary/60 backdrop-blur-[3px]",
+          "border border-primary/70 bg-primary/50 dark:bg-primary/20 text-primary-foreground dark:text-primary data-[hovered]:bg-primary/70 data-[pressed]:bg-primary/60 backdrop-blur-[3px] dark:data-[hovered]:text-background",
         destructive:
           "border border-destructive/70 bg-destructive/50 text-foreground data-[hovered]:bg-destructive/70 data-[pressed]:bg-destructive/60 backdrop-blur-[3px]",
         outline:

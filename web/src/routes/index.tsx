@@ -174,10 +174,10 @@ function IndexPage() {
             </span>
 
             <div className="rounded-lg border border-border/35 bg-card/50 px-4 py-3 backdrop-blur-[3px]">
-              <span className="flex gap-4 font-serif text-xl font-semibold text-primary max-md:ml-0 max-md:flex-col max-md:gap-1 max-md:text-base">
-                <span>{currentTimeEST}</span>
-                <span>{currentTimeJST}</span>
-                <span>{currentTimeUTC}</span>
+              <span className="flex w-80 justify-between gap-2 font-serif text-xl font-semibold text-primary max-md:ml-0 max-md:w-20 max-md:flex-col max-md:gap-1 max-md:text-base">
+                <span className="w-full text-center">{currentTimeEST}</span>
+                <span className="w-full text-center">{currentTimeJST}</span>
+                <span className="w-full text-center">{currentTimeUTC}</span>
               </span>
             </div>
 
@@ -203,8 +203,8 @@ function IndexPage() {
       >
         <div className="relative z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 backdrop-blur-[3px]">
           <div className="flex flex-col items-center justify-center gap-1">
-            <h1 className="font-serif text-4xl font-medium text-primary max-md:text-3xl">
-              Get in touch
+            <h1 className="font-serif text-2xl font-medium text-foreground max-md:text-xl">
+              You can also find me at
             </h1>
             <div className="flex items-center justify-center gap-2">
               <a
@@ -213,7 +213,7 @@ function IndexPage() {
                 rel="noopener noreferrer"
               >
                 <Button variant="ghost" size="icon_sm">
-                  <GithubLogoIcon size={14} weight="bold" />
+                  <GithubLogoIcon size={16} weight="regular" />
                 </Button>
               </a>
               <a
@@ -222,7 +222,7 @@ function IndexPage() {
                 rel="noopener noreferrer"
               >
                 <Button variant="ghost" size="icon_sm">
-                  <XLogoIcon size={14} weight="bold" />
+                  <XLogoIcon size={16} weight="regular" />
                 </Button>
               </a>
               <a
@@ -231,7 +231,7 @@ function IndexPage() {
                 rel="noopener noreferrer"
               >
                 <Button variant="ghost" size="icon_sm">
-                  <TelegramLogoIcon size={14} weight="bold" />
+                  <TelegramLogoIcon size={16} weight="regular" />
                 </Button>
               </a>
             </div>
@@ -247,18 +247,18 @@ function IndexPage() {
 
           <div
             aria-hidden
-            className="absolute top-1/2 left-1/2 z-0 container h-2 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+            className="absolute top-1/2 left-1/2 z-0 container h-2 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary opacity-90 blur-3xl"
           />
           <div
             aria-hidden
-            className="absolute top-1/2 left-1/2 z-0 container h-4/5 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+            className="absolute top-1/2 left-1/2 z-0 container h-4/5 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary opacity-90 blur-3xl"
           />
         </div>
       </section>
 
       <div className="z-50 ml-auto overflow-hidden px-4 py-1">
         <span className="font-mono text-xs font-medium text-muted-foreground/50">
-          ©Sep’25
+          ©2024-2025
         </span>
       </div>
     </div>
