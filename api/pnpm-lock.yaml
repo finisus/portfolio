@@ -17,6 +17,9 @@ importers:
       hono:
         specifier: 4.9.6
         version: 4.9.6
+      hono-rate-limiter:
+        specifier: 0.4.2
+        version: 0.4.2(hono@4.9.6)
       node-fetch:
         specifier: 3.3.2
         version: 3.3.2
@@ -1121,6 +1124,11 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  hono-rate-limiter@0.4.2:
+    resolution: {integrity: sha512-AAtFqgADyrmbDijcRTT/HJfwqfvhalya2Zo+MgfdrMPas3zSMD8SU03cv+ZsYwRU1swv7zgVt0shwN059yzhjw==}
+    peerDependencies:
+      hono: ^4.1.1
 
   hono@4.9.6:
     resolution: {integrity: sha512-doVjXhSFvYZ7y0dNokjwwSahcrAfdz+/BCLvAMa/vHLzjj8+CFyV5xteThGUsKdkaasgN+gF2mUxao+SGLpUeA==}
@@ -2829,6 +2837,10 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hono-rate-limiter@0.4.2(hono@4.9.6):
+    dependencies:
+      hono: 4.9.6
 
   hono@4.9.6: {}
 

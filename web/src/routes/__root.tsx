@@ -26,17 +26,17 @@ const ThemedToaster = (props: ToasterProps) => {
       duration={4000}
       toastOptions={{
         style: {
-          background: "var(--background)/0.75",
+          background: "hsl(from var(--card) h s l / 0.50)",
           backdropFilter: "blur(4px)",
           WebkitBackdropFilter: "blur(4px)",
           borderRadius: "var(--radius)",
-          border: "1px solid var(--border)",
+          border: "1px solid hsl(from var(--border) h s l / 0.70)",
           paddingTop: "10px",
           paddingBottom: "12px",
           paddingLeft: "12px",
           paddingRight: "12px",
-          fontSize: 14,
-          fontFamily: "var(--font-spline-mono)",
+          fontSize: 18,
+          fontFamily: "var(--font-instrument-serif)",
           fontWeight: "400",
           color: "var(--foreground)",
         },
@@ -45,8 +45,8 @@ const ThemedToaster = (props: ToasterProps) => {
         loading: (
           <div className="ml-1">
             <CircleNotchIcon
-              size={14}
-              strokeWidth={2.5}
+              size={13}
+              weight="regular"
               className="animate-spin"
               color="var(--foreground)"
             />
@@ -55,18 +55,18 @@ const ThemedToaster = (props: ToasterProps) => {
         success: (
           <div className="ml-1">
             <CheckIcon
-              size={14}
-              strokeWidth={2.5}
+              size={13}
+              weight="regular"
               className="transition-all ease-in-out"
-              color="var(--secondary-foreground)"
+              color="var(--toast-success)"
             />
           </div>
         ),
         info: (
           <div className="ml-1">
             <InfoIcon
-              size={14}
-              strokeWidth={2.5}
+              size={13}
+              weight="regular"
               className="transition-all ease-in-out"
               color="var(--foreground)"
             />
@@ -75,8 +75,8 @@ const ThemedToaster = (props: ToasterProps) => {
         error: (
           <div className="ml-1">
             <XIcon
-              size={14}
-              strokeWidth={2.5}
+              size={13}
+              weight="regular"
               className="transition-all ease-in-out"
               color="var(--destructive)"
             />

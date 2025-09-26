@@ -1,32 +1,35 @@
 import { createEnv } from "@t3-oss/env-core";
-import "dotenv/config";
 import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z
-      .enum(["development", "test", "production"])
-      .default("development"),
-    PORT: z.string(),
     CORS_ORIGIN: z
       .string()
       .transform((str) => str.split(",").map((s) => s.trim()))
       .pipe(z.array(z.string())),
-    PLUNK_SECRET: z.string(),
-    CONTACT_EMAIL: z.string(),
+  },
+
+  /**
+   * The prefix that client-side variables must have. This is enforced both at
+   * a type-level and at runtime.
+   */
+  clientPrefix: "VITE_",
+
+  client: {
+    VITE_API_BASE_URL: z.url(),
   },
 
   /**
    * What object holds the environment variables at runtime. This is usually
    * `process.env` or `import.meta.env`.
    */
-  runtimeEnv: process.env,
+  runtimeEnv: import.meta.env,
 
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
    * useful for Docker builds.
    */
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+  skipValidation: !!import.meta.env.SKIP_ENV_VALIDATION,
 
   /**
    * By default, this library will feed the environment variables directly to

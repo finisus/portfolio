@@ -22,6 +22,9 @@ export default defineConfig({
   },
   server: {
     allowedHosts: ["finisus.dev", ".finisus.dev"],
+    cors: {
+      origin: process.env.CORS_ORIGIN,
+    },
     hmr: {
       overlay: false,
     },

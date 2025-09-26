@@ -143,7 +143,7 @@ function IndexPage() {
         </div>
 
         <div className="mx-auto px-4">
-          <div className="overflow-hidden rounded-lg border border-border/35 bg-card/50 p-4 shadow-md backdrop-blur-[3px]">
+          <div className="overflow-hidden rounded-lg border border-border/35 bg-card/50 p-4 backdrop-blur-[3px]">
             <Works />
           </div>
         </div>
@@ -173,8 +173,8 @@ function IndexPage() {
               If you live around these parts...
             </span>
 
-            <div className="rounded-lg border border-border/35 bg-card/50 px-4 py-3 shadow-md backdrop-blur-[3px]">
-              <span className="flex gap-4 font-mono text-base font-medium text-primary max-md:ml-0 max-md:flex-col max-md:gap-1 max-md:text-sm">
+            <div className="rounded-lg border border-border/35 bg-card/50 px-4 py-3 backdrop-blur-[3px]">
+              <span className="flex gap-4 font-serif text-xl font-semibold text-primary max-md:ml-0 max-md:flex-col max-md:gap-1 max-md:text-base">
                 <span>{currentTimeEST}</span>
                 <span>{currentTimeJST}</span>
                 <span>{currentTimeUTC}</span>
@@ -201,7 +201,7 @@ function IndexPage() {
         ref={colophonSectRef}
         className="container mx-auto overflow-hidden px-4 pt-16"
       >
-        <div className="relative z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 shadow-md backdrop-blur-[3px]">
+        <div className="relative z-20 flex flex-col items-center justify-start gap-2 rounded-lg border border-border/35 bg-card/50 px-4 py-6 backdrop-blur-[3px]">
           <div className="flex flex-col items-center justify-center gap-1">
             <h1 className="font-serif text-4xl font-medium text-primary max-md:text-3xl">
               Get in touch
