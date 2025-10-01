@@ -1,5 +1,6 @@
 import Carousel from "@/components/ui/carousel";
 import { useEffect } from "react";
+import chillhousePreview from "../assets//work-previews/chillhouse-preview[1197x1197].webp";
 import billyPreview from "../assets/work-previews/billy-preview[1918x1076].webp";
 import catwifgoldPreview from "../assets/work-previews/catwifgold-preview[1918x1076].webp";
 import ceicatPfpGenPreview from "../assets/work-previews/ceicat-pfpgen-preview[1918x1076].webp";
@@ -21,6 +22,7 @@ import y2kPreview from "../assets/work-previews/y2k-preview[1918x1076].webp";
 
 const imgPreviews = [
   ceicatPreview,
+  chillhousePreview,
   ceicatPfpGenPreview,
   billyPreview,
   y2kPreview,
@@ -42,6 +44,7 @@ const imgPreviews = [
 
 const imgLinks = [
   "https://finisus-ceicat.vercel.app",
+  "https://chillhouse.meme",
   "https://finisus-ceicat-pfpgen.vercel.app",
   "https://finisus-billy.vercel.app",
   "https://finisus-y2k.vercel.app",
