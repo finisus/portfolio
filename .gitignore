@@ -59,3 +59,4 @@ vite-env.d.ts
 .idea
 *.local
 count.txt
+.claude
